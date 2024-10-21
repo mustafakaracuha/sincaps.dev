@@ -48,7 +48,7 @@ function HoroscopePage() {
                         <div
                             key={index}
                             onClick={() => setSelectedHoroscope(horoscope)}
-                            className={`cursor-pointer p-4 rounded-lg flex flex-col items-center border ${selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"} hover:bg-gray-50 transition-all`}
+                            className={`cursor-pointer p-6 flex flex-col items-center shadow-lg shadow-gray-200 rounded-2xl ${selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"} hover:bg-gray-50 transition-all`}
                         >
                             <div className={`${horoscope.color} text-3xl mb-2`}>{horoscope.icon}</div>
                             <h3 className="text-md text-gray-600 mb-1 font-medium">{horoscope.name}</h3>
@@ -59,7 +59,7 @@ function HoroscopePage() {
             </div>
 
             {horoscopeListResult && selectedHoroscope && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-20">
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-10">
                     <div className="bg-white rounded-lg p-6 w-96 relative">
                         <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-3 text-gray-500 hover:text-gray-700">
                             &times;
