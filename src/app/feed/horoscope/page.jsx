@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
+
 import { GiAries, GiTaurus, GiGemini, GiCancer, GiLeo, GiVirgo, GiLibra, GiScorpio, GiSagittarius, GiCapricorn, GiAquarius, GiPisces } from "react-icons/gi";
 import { fetchHoroscope } from "../../../store/features/horoscopes/horoscopeSlice";
 
@@ -23,7 +25,6 @@ const horoscopes = [
 function HoroscopePage() {
     const [selectedHoroscope, setSelectedHoroscope] = useState("");
     const { horoscopeListResult } = useSelector((state) => state.horoscope);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -45,22 +46,27 @@ function HoroscopePage() {
 
                 <div className={"grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"}>
                     {horoscopes.map((horoscope, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             onClick={() => setSelectedHoroscope(horoscope)}
-                            className={`cursor-pointer p-6 flex flex-col items-center shadow-lg shadow-gray-200 rounded-2xl ${selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"} hover:bg-gray-50 transition-all`}
+                            className={`cursor-pointer p-6 flex flex-col items-center shadow-lg shadow-gray-200 rounded-2xl ${
+                                selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"
+                            } hover:bg-gray-50 transition-all`}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.05 }}
                         >
                             <div className={`${horoscope.color} text-3xl mb-2`}>{horoscope.icon}</div>
                             <h3 className="text-md text-gray-600 mb-1 font-medium">{horoscope.name}</h3>
                             <p className="text-sm text-gray-400">{horoscope.date}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
 
             {horoscopeListResult && selectedHoroscope && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-10">
-                    <div className="bg-white rounded-lg p-6 w-96 relative">
+                    <motion.div className="bg-white rounded-lg p-6 w-96 relative" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3 }}>
                         <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-3 text-gray-500 hover:text-gray-700">
                             &times;
                         </button>
@@ -73,7 +79,7 @@ function HoroscopePage() {
                                 <p className="text-gray-600 text-[15px]">{horoscopeListResult[0]?.title}</p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             )}
         </div>

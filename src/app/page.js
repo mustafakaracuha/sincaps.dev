@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Page() {
     const topics = [
@@ -20,10 +23,15 @@ function Page() {
                 Amacımız, kullanıcılarımızı en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
             </p>
 
-            {/* Topic Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {topics.map((topic, index) => (
-                    <div key={index} className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start">
+                    <motion.div
+                        key={index}
+                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
                         <div className="w-full flex items-center justify-between mb-5">
                             <h3 className="text-md font-semibold text-gray-700">{topic.title}</h3>
                             <div>{topic.icon}</div>
@@ -32,7 +40,7 @@ function Page() {
                         <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 text-sm font-medium hover:underline">
                             Keşfet
                         </Link>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
