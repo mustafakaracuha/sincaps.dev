@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
-import { CgSpinner } from "react-icons/cg";
 import { IoIosFootball } from "react-icons/io";
 import { GiSoccerKick } from "react-icons/gi";
+import { LuSquirrel } from "react-icons/lu";
 
 import { fetchNews } from "../../../store/features/feed/feedSlice";
 
@@ -22,8 +22,8 @@ const FeedPage = ({ params }) => {
     if (loading) {
         return (
             <div className="w-full flex flex-col items-center justify-center pt-10">
-                <CgSpinner className="text-3xl text-indigo-600 animate-spin" />
-                <p className="mt-2">İçerikler yükleniyor...</p>
+                <LuSquirrel className="text-2xl text-gray-400 animate-pulse" />
+                <p className="mt-2 text-gray-600">Son haberler yükleniyor...</p>
             </div>
         );
     }
@@ -65,16 +65,16 @@ const FeedPage = ({ params }) => {
                 </h1>
             )}
 
-            <div className="grid sm:grid-cols-1 xl:grid-cols-2 min-[1700px]:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-8">
                 {newsArticles.length > 0 &&
                     newsArticles.map((article, index) => (
-                        <a href={article.link} target="_blank" key={index} className="text-sm text-gray-700 font-semibold">
-                            <div key={index} className="p-5 overflow-hidden border rounded-2xl relative flex">
-                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-20 h-20 object-cover rounded-xl mr-4" />}
-                                <div className="flex flex-col justify-center space-y-2">
-                                    <h4 className="text-[15px] text-gray-600 font-semibold">{article.title}</h4>
-                                    <p className="text-sm text-gray-500 leading-snug">{article.description}</p>
-                                </div>
+                        <a href={article.link} target="_blank" key={index} className="group block bg-white shadow-lg shadow-gray-200 rounded-2xl overflow-hidden">
+                            <div className="relative">
+                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-48 object-cover rounded-t-2xl" />}
+                                <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
+                            </div>
+                            <div className="py-8 px-6">
+                                <h4 className="text-md font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
                             </div>
                         </a>
                     ))}
