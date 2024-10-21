@@ -1,13 +1,6 @@
 # Sincaps.dev
 
-Sincaps.dev, modern web teknolojileri ile geliştirilmiş bir platformdur. Kullanıcı dostu arayüzü ve güçlü fonksiyonları ile dikkat çeker. Proje, kullanıcıların içeriklere kolayca erişim sağlaması ve etkileşimde bulunabilmesi amacıyla tasarlanmıştır.
-
-## Özellikler
-
-- **Hızlı ve Etkili Navigasyon:** Kullanıcıların içeriklere kolay erişimini sağlamak için optimize edilmiş bir navigasyon yapısı.
-- **Hücre Ekleme ve Güncelleme:** Kullanıcıların içerik ekleyip güncelleyebileceği dinamik formlar.
-- **Mobil Uyumlu Tasarım:** Her cihazda mükemmel bir deneyim sunmak için responsive bir tasarım.
-- **Kullanıcı Profilleri:** Kullanıcıların kendilerine özel profiller oluşturmalarına olanak tanır.
+Sincaps.dev, gündemden teknolojiye, ekonomiden spora kadar geniş bir yelpazede haberleri takip edebileceğiniz bir platformdur. En son gelişmeleri ve bilgileri kolaylıkla keşfedebilirsiniz.
 
 ## Kullanılan Teknolojiler
 

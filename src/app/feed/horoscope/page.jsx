@@ -43,13 +43,7 @@ function HoroscopePage() {
                     </p>
                 </div>
 
-                <div
-                    className={
-                        horoscopeListResult && selectedHoroscope
-                            ? "grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
-                            : "grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"
-                    }
-                >
+                <div className={"grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"}>
                     {horoscopes.map((horoscope, index) => (
                         <div
                             key={index}
@@ -65,8 +59,8 @@ function HoroscopePage() {
             </div>
 
             {horoscopeListResult && selectedHoroscope && (
-                <div className="flex-1 !h-screen w-1/3 pl-10">
-                    <div className="bg-white transition-all duration-300 rounded-lg p-6 w-full h-auto border relative">
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-20">
+                    <div className="bg-white rounded-lg p-6 w-96 relative">
                         <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-3 text-gray-500 hover:text-gray-700">
                             &times;
                         </button>
