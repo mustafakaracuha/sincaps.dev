@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion"; // Framer Motion ekle
 
 import { IoIosFootball } from "react-icons/io";
 import { GiSoccerKick } from "react-icons/gi";
@@ -68,7 +69,15 @@ const FeedPage = ({ params }) => {
             <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-8">
                 {newsArticles.length > 0 &&
                     newsArticles.map((article, index) => (
-                        <a href={article.link} target="_blank" key={index} className="group block bg-white shadow-lg shadow-gray-200 rounded-2xl overflow-hidden">
+                        <motion.a
+                            key={index}
+                            href={article.link}
+                            target="_blank"
+                            className="group block bg-white shadow-lg shadow-gray-200 rounded-2xl overflow-hidden"
+                            initial={{ opacity: 0, y: 20 }} // Başlangıç durumu
+                            animate={{ opacity: 1, y: 0 }} // Animasyon durumu
+                            transition={{ duration: 0.3, delay: index * 0.1 }} // Geçiş süresi ve gecikme
+                        >
                             <div className="relative">
                                 {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-48 object-cover rounded-t-2xl" />}
                                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
@@ -76,7 +85,7 @@ const FeedPage = ({ params }) => {
                             <div className="py-8 px-6">
                                 <h4 className="text-md font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
                             </div>
-                        </a>
+                        </motion.a>
                     ))}
             </div>
         </div>
