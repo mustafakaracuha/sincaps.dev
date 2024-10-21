@@ -33,7 +33,7 @@ function HoroscopePage() {
     }, [dispatch, selectedHoroscope]);
 
     return (
-        <div className={`flex w-full h-full px-10 py-8 ${selectedHoroscope ? "flex-row" : "flex-col"}`}>
+        <div className={`flex w-full h-full overflow-auto pb-24 px-10 py-8 ${selectedHoroscope ? "flex-row" : "flex-col"}`}>
             <div className={`flex-1 ${selectedHoroscope ? "w-2/3" : "w-full"}`}>
                 <div className="mb-6">
                     <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">Burçlar</h1>
@@ -47,7 +47,7 @@ function HoroscopePage() {
                     className={
                         horoscopeListResult && selectedHoroscope
                             ? "grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
-                            : "grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"
+                            : "grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"
                     }
                 >
                     {horoscopes.map((horoscope, index) => (

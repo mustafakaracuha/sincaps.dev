@@ -13,7 +13,7 @@ function Page() {
     ];
 
     return (
-        <div className="w-full flex flex-col items-center justify-start bg-white px-20 pt-10">
+        <div className="w-full h-screen pb-24 flex flex-col items-center justify-start bg-white px-20 pt-10 overflow-auto">
             {/* Sincaps Description */}
             <p className="text-md text-gray-600 mb-8 text-start">
                 <strong className="text-indigo-600">Sincaps</strong>, gündemden teknolojiye, ekonomiden spora kadar geniş bir yelpazede haberleri takip edebileceğiniz bir platformdur. En son
