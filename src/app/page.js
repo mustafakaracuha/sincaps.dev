@@ -14,7 +14,7 @@ function Page() {
 
     return (
         <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white px-10 pt-10 overflow-auto">
-            <h1 className="text-3xl font-bold text-gray-700 mb-4 text-center">Sincap.dev</h1>
+            <h1 className="text-3xl font-bold text-gray-700 mb-4 text-center">Sincaps.dev</h1>
             <p className="text-md font-normal text-gray-600 mb-10">
                 <strong className="text-indigo-600">Sincap.dev</strong>, kullanıcıların gündemden teknolojiye, ekonomiden spora kadar geniş bir yelpazede haberleri takip edebileceği bir platformdur.
                 Amacımız, kullanıcılarımızı en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
