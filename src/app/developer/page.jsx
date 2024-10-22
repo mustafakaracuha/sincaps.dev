@@ -4,11 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
+
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiReact, SiTailwindcss, SiNextdotjs, SiJavascript } from "react-icons/si";
 
 import developer from "../../assets/images/developer.jpg";
-import toast from "react-hot-toast";
 
 function Developer() {
     const [message, setMessage] = useState("");
