@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 import { LuSquirrel } from "react-icons/lu";
 import { MdOutlineRssFeed } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
@@ -37,16 +39,21 @@ const NavBar = () => {
     return (
         <nav className="bg-white border-b border-gray-200 py-4">
             <div className="flex justify-between items-center px-16">
-                <div className="text-xl font-bold text-gray-800 flex items-center space-x-2">
+                <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                    className="text-xl font-bold text-gray-800 flex items-center space-x-2"
+                >
                     <Link href="/" className="flex items-center gap-2">
                         <LuSquirrel className="text-indigo-600" size={30} />
                         <span className="text-indigo-600">
                             Sincaps<span className="text-gray-500">.dev</span>
                         </span>
                     </Link>
-                </div>
+                </motion.div>
 
-                <div className="hidden md:flex space-x-6">
+                <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }} className="hidden md:flex space-x-6">
                     <Link href="/" className="text-gray-600 flex text-[13px] items-center hover:text-indigo-500 transition duration-300">
                         <MdOutlineRssFeed size={18} className="mr-1" />
                         Akış
@@ -55,7 +62,7 @@ const NavBar = () => {
                         <FaUser size={13} className="mr-1" />
                         Geliştirici
                     </Link>
-                </div>
+                </motion.div>
 
                 <div className="md:hidden flex items-center">
                     <button onClick={toggleMenu} className="text-gray-600 hover:text-indigo-500 focus:outline-none">

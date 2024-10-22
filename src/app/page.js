@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function Page() {
     const newsTopics = [
-        { link: "guncel", title: "Güncel", description: "En son haberleri ve gelişmeleri keşfedin.", icon: <FaNewspaper className="text-red-500 text-lg" /> },
+        { link: "guncel", title: "Son Dakika", description: "En son haberleri ve gelişmeleri keşfedin.", icon: <FaNewspaper className="text-red-500 text-lg" /> },
         { link: "teknoloji", title: "Teknoloji", description: "Gündemdeki en son teknoloji gelişmeleri.", icon: <FaLaptopCode className="text-yellow-500 text-lg" /> },
         { link: "egitim", title: "Eğitim", description: "Eğitimde son durum ve önemli gelişmeler.", icon: <FaChartLine className="text-pink-500 text-lg" /> },
         { link: "saglik", title: "Sağlık", description: "Sağlık alanındaki yenilikler ve bilgiler.", icon: <FaHeartbeat className="text-orange-500 text-lg" /> },
@@ -19,26 +19,23 @@ function Page() {
 
     return (
         <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white px-10 pt-8 overflow-auto">
-            <motion.h1
-            initial={{ opacity: 0,}}
-            animate={{ opacity: 1,}}
-            transition={{ duration: 0.3}}
-            className="text-3xl font-bold max-sm:text-[20px] text-gray-700 mb-4 text-center">Sincaps.dev</motion.h1>
+            <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="text-3xl font-bold max-sm:text-[20px] text-gray-700 mb-4 text-center">
+                Sincaps.dev
+            </motion.h1>
             <motion.p
-            initial={{ opacity: 0,}}
-            animate={{ opacity: 1,}}
-            transition={{ duration: 0.3, delay: 0.2}}
-            className="max-sm:text-sm md:text-sm lg:text-md xl:text-[15px] font-normal text-gray-500 mb-10">
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+                className="max-sm:text-sm md:text-sm lg:text-md xl:text-[15px] font-normal text-gray-500 mb-10"
+            >
                 <strong className="text-indigo-600">Sincap.dev</strong>, kullanıcıların gündemden teknolojiye, ekonomiden spora kadar geniş bir yelpazede haberleri takip edebileceği bir platformdur.
                 Kullanıcıları en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
             </motion.p>
 
             {/* Haberler Başlığı */}
-            <motion.h2 
-            initial={{ opacity: 0,}}
-            animate={{ opacity: 1,}}
-            transition={{ duration: 0.3, delay: 0.3}}
-            className="text-lg font-semibold text-gray-600 mb-6">Haberler</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} className="text-lg font-semibold text-gray-600 mb-6">
+                Haberler
+            </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {newsTopics.map((topic, index) => (
                     <motion.div
@@ -61,11 +58,9 @@ function Page() {
             </div>
 
             {/* Araçlar Başlığı */}
-            <motion.h2
-             initial={{ opacity: 0,}}
-             animate={{ opacity: 1,}}
-             transition={{ duration: 0.3, delay: 0.4}}
-            className="text-lg font-semibold text-gray-600 mt-12 mb-6">Araçlar</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="text-lg font-semibold text-gray-600 mt-12 mb-6">
+                Araçlar
+            </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {toolTopics.map((topic, index) => (
                     <motion.div
