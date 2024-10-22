@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const topics = [
-    { link: "guncel", title: "#Son Dakika", description: "En son haberleri ve gelişmeleri keşfedin." },
+    { link: "guncel", title: "#SonDakika", description: "En son haberleri ve gelişmeleri keşfedin." },
     { link: "ekonomi", title: "Ekonomi", description: "Ekonomideki son durum ve önemli gelişmeler." },
     { link: "spor", title: "Spor", description: "Spor dünyasından haberler ve etkinlikler. Puan durumları, canlı maç sonuçları, ligler.." },
     { link: "teknoloji", title: "Teknoloji", description: "Gündemdeki en son teknoloji gelişmeleri." },
