@@ -77,12 +77,12 @@ function HoroscopePage() {
             {horoscopeListResult && selectedHoroscope && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-20">
                     <motion.div
-                        className="bg-white w-11/12 md:w-2/3 lg:w-1/2 h-auto p-8 relative overflow-auto flex flex-col items-center justify-center rounded-lg shadow-lg"
+                        className="bg-white w-11/12 md:w-2/3 lg:w-1/2 h-auto p-8 relative overflow-auto flex flex-col items-center justify-center rounded-xl shadow-lg"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-4xl">
+                        <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-5 text-gray-500 hover:text-gray-700 text-3xl">
                             &times;
                         </button>
                         <div className="flex flex-col items-center">

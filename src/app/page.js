@@ -41,7 +41,7 @@ function Page() {
             <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} className="text-lg font-semibold text-gray-600 mb-6">
                 Haberler
             </motion.h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 gap-8">
                 {newsTopics.map((topic, index) => (
                     <motion.div
                         key={index}
@@ -66,7 +66,7 @@ function Page() {
             <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="text-lg font-semibold text-gray-600 mt-12 mb-6">
                 Araçlar
             </motion.h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 gap-8">
                 {toolTopics.map((topic, index) => (
                     <motion.div
                         key={index}
