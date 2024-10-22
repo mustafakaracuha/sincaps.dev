@@ -5,6 +5,9 @@ import NavBar from "./components/NavBar";
 import SidebarMenu from "./components/SideBar";
 import "./globals.css";
 
+import { Toaster } from 'react-hot-toast';
+
+
 export const metadata = {
     title: "Sincaps.dev",
     description:
@@ -31,6 +34,7 @@ export default function RootLayout({ children }) {
                         <div className="w-full h-screen">{children}</div>
                     </div>
                 </Providers>
+                <Toaster />
             </body>
         </html>
     );

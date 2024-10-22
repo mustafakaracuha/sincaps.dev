@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
@@ -8,8 +8,11 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiReact, SiTailwindcss, SiNextdotjs, SiJavascript } from "react-icons/si";
 
 import developer from "../../assets/images/developer.jpg";
+import toast from "react-hot-toast";
 
 function Developer() {
+    const [message, setMessage] = useState("");
+
     return (
         <>
             <div className="w-full flex h-full items-start justify-center overflow-hidden">
@@ -80,13 +83,17 @@ function Developer() {
                     </motion.div>
 
                     {/* İletişim */}
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.8 }} className="text-center mt-8">
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.8 }} className="text-center flex-col mt-8 px-14">
                         <textarea
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                             className="w-[30rem] max-sm:w-[25rem] max-sm:text-sm max-sm:h-20 p-6 border border-gray-300 rounded-md mb-4 focus:outline-indigo-500"
                             rows="4"
                             placeholder="Öneri veya görüşlerinizi bana bildirin."
                         ></textarea>
-                        <button className="bg-indigo-600 text-white py-2 px-4 max-sm:text-sm rounded-md">Bana Ulaşın</button>
+                        <button disabled={!message} onClick={() => toast.success("Önerini aldım, teşekkürler 😉")} className=" bg-indigo-600 disabled:opacity-50 text-white py-2 px-4 max-sm:text-sm rounded-md">
+                            Gönder
+                        </button>
                     </motion.div>
                 </div>
             </div>
