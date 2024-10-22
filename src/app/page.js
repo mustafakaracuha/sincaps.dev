@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaTools } from "react-icons/fa";
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaTools, FaBook } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Page() {
@@ -11,6 +11,7 @@ function Page() {
         { link: "egitim", title: "Eğitim", description: "Eğitimde son durum ve önemli gelişmeler.", icon: <FaChartLine className="text-pink-500 text-lg" /> },
         { link: "saglik", title: "Sağlık", description: "Sağlık alanındaki yenilikler ve bilgiler.", icon: <FaHeartbeat className="text-orange-500 text-lg" /> },
         { link: "spor", title: "Spor", description: "Spor dünyasından haberler ve etkinlikler.", icon: <FaFutbol className="text-green-500 text-lg" /> },
+        { link: "dini-bilgiler", title: "Dini Bilgiler", description: "Dini konularda güncel bilgiler ve kaynaklar.", icon: <FaBook className="text-blue-500 text-lg" /> },
         { link: "magazin", title: "Magazin", description: "Magazin dünyasından haberler.", icon: <FaFilm className="text-gray-500 text-lg" /> },
         { link: "burc", title: "Burçlar", description: "Günlük burç yorumlarınızı okuyun ve geleceğinizi öğrenin.", icon: <FaStar className="text-violet-500 text-lg" /> },
     ];

@@ -16,6 +16,8 @@ export const fetchNews = createAsyncThunk("feed/fetchNews", async (feedName) => 
                 return "magazin";
             case "teknoloji":
                 return "teknoloji";
+            case "dini-bilgiler":
+                return "dini-bilgiler";
             case "egitim":
                 return "egitim";
             case "saglik":
@@ -34,6 +36,8 @@ export const fetchNews = createAsyncThunk("feed/fetchNews", async (feedName) => 
             ? "https://www.mynet.com/magazin/"
             : tag === "spor"
             ? "https://www.mynet.com/spor/"
+            : tag === "dini-bilgiler" // Yeni kontrol
+            ? "https://www.mynet.com/dini-bilgiler/" // Dini bilgiler için uygun URL
             : `https://www.mynet.com/${tag}-haberler`
     );
     const html = response.data;
