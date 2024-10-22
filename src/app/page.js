@@ -8,7 +8,6 @@ import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { IoIosColorPalette } from "react-icons/io";
 
-
 function Page() {
     const newsTopics = [
         { link: "guncel", title: "Son Dakika", description: "En son haberleri ve gelişmeleri keşfedin.", icon: <FaNewspaper className="text-red-500 text-lg" /> },
@@ -75,7 +74,7 @@ function Page() {
             </div>
 
             <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="text-lg font-semibold text-gray-600 mt-12 mb-6">
-                Araçlar
+                Bilgilendirme
             </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 gap-8">
                 {toolTopics.map((topic, index) => (
