@@ -22,7 +22,6 @@ function Page() {
     ];
 
     const toolTopics = [
-        { link: "donusturuculer", title: "Dönüştürücüler", description: "Günlük hayatınızda kullanabileceğiniz araçlar.", icon: <FaTools className="text-blue-500 text-lg" /> },
         { link: "deprem", title: "Deprem", description: "Deprem anında nasıl hareket etmeniz gerektiği hakkında", icon: <RiEarthquakeFill className="text-fuchsia-500 text-[19px]" /> },
         { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" /> },
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" /> },
