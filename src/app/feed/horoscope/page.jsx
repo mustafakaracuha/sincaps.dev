@@ -74,10 +74,10 @@ function HoroscopePage() {
                             &times;
                         </button>
                         <div className="flex flex-col items-center">
-                            <div className={`${selectedHoroscope.color} text-6xl mb-4`}>{selectedHoroscope.icon}</div>
-                            <h2 className="max-sm:text-[15px] xl:text-3xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
-                            <p className="max-sm:text-[13px] xl:text-lg mt-1 text-gray-500">{selectedHoroscope.date}</p>
-                            <div className="mt-10 text-lg text-gray-600 px-4 max-w-xl">
+                            <div className={`${selectedHoroscope.color} text-5xl mb-4`}>{selectedHoroscope.icon}</div>
+                            <h2 className="max-sm:text-[15px] xl:text-2xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
+                            <p className="max-sm:text-[13px] xl:text-md mt-1 text-gray-500">{selectedHoroscope.date}</p>
+                            <div className="mt-12 text-lg text-gray-600 px-4 max-w-xl">
                                 <p className="font-semibold max-sm:text-[13px] text-gray-700 mb-4">Günlük Burç Yorumu</p>
                                 <p className=" max-sm:text-[14px] xl:text-lg">{horoscopeListResult[0]?.title}</p>
                             </div>

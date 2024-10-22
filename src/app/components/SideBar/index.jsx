@@ -10,6 +10,7 @@ const topics = [
     { link: "spor", title: "Spor", description: "Spor dünyasından haberler ve etkinlikler. Puan durumları, canlı maç sonuçları, ligler.." },
     { link: "ekonomi", title: "Ekonomi", description: "Ekonomideki son durum ve önemli gelişmeler." },
     { link: "burc", title: "Burçlar", description: "Günlük burç yorumlarınızı okuyun ve geleceğinizi öğrenin." },
+    { link: "donusturuculer", title: "Dönüştürücüler", description: "Günlük hayatınızda kullanabileceğiniz araçlar." },
 ];
 
 const SidebarMenu = () => {
@@ -18,7 +19,7 @@ const SidebarMenu = () => {
             <ul className="space-y-6">
                 {topics.map((topic, index) => (
                     <li key={index} className="cursor-pointer">
-                        <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
+                        <Link href={topic.link === "burc" ? `/feed/horoscope` : topic.link === "donusturuculer" ? `/converters` : `/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
                             <h4 className="text-[15px] font-medium">{topic.title}</h4>
                             <p className="text-[13px] text-gray-400 leading-5">{topic.description}</p>
                         </Link>

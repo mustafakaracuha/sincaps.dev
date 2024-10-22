@@ -39,8 +39,8 @@ const NavBar = () => {
             <div className="flex justify-between items-center px-16">
                 <div className="text-xl font-bold text-gray-800 flex items-center space-x-2">
                     <Link href="/" className="flex items-center gap-2">
-                        <LuSquirrel className="text-indigo-500" size={30} />
-                        <span className="text-indigo-500">
+                        <LuSquirrel className="text-indigo-600" size={30} />
+                        <span className="text-indigo-600">
                             Sincaps<span className="text-gray-500">.dev</span>
                         </span>
                     </Link>
