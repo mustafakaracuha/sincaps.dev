@@ -27,7 +27,12 @@ const SidebarMenu = () => {
     }, [pathname]);
 
     return (
-        <div className="w-[30rem] h-full overflow-y-auto max-sm:hidden px-16 pt-8 pb-24 custom-scrollbar">
+        <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="w-[30rem] h-full overflow-y-auto max-sm:hidden px-16 pt-8 pb-24 custom-scrollbar"
+        >
             <ul className="space-y-6">
                 <AnimatePresence>
                     {(isFeedPage ? topics : topics.filter((topic) => ["guncel", "spor", "ekonomi", "magazin"].includes(topic.link))).map((topic) => (
@@ -40,7 +45,7 @@ const SidebarMenu = () => {
                     ))}
                 </AnimatePresence>
             </ul>
-        </div>
+        </motion.div>
     );
 };
 

@@ -21,7 +21,6 @@ const NavBar = () => {
         setIsMenuOpen(false);
     };
 
-    // Dışarıya tıklama kontrolü
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -29,7 +28,6 @@ const NavBar = () => {
             }
         };
 
-        // Tüm tıklamaları dinle
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
