@@ -43,27 +43,32 @@ const FeedPage = ({ params }) => {
     return (
         <div className="w-full h-screen py-8 pb-20 px-10 overflow-auto">
             {newsArticles.length > 0 && (
-                <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
-                    {feedName === "dini-bilgiler" ? "Dini Bilgiler" : `${feedName.charAt(0).toUpperCase() + feedName.slice(1)} Haberler`}
-                    <span>
-                        {feedName.charAt(0).toUpperCase() + feedName.slice(1) === "Spor" && (
-                            <div className="flex items-center gap-3">
-                                <Link
-                                    href={`/feed/${feedName}/standings`}
-                                    className="text-[12px] py-1 px-3 border border-gray-200 bg-white rounded-lg font-semibold flex items-center gap-1 text-gray-500"
-                                >
-                                    <IoIosFootball className="text-gray-500" size={15} /> Puan Durumu
-                                </Link>
-                                <Link
-                                    href={`/feed/${feedName}/fixtures`}
-                                    className="text-[12px] py-1 px-3 border border-gray-200 bg-white rounded-lg font-semibold flex items-center gap-1 text-gray-500"
-                                >
-                                    <GiSoccerKick className="text-gray-500" size={15} /> Fikstür
-                                </Link>
-                            </div>
-                        )}
-                    </span>
-                </h1>
+                <>
+                    <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
+                        {feedName === "dini-bilgiler" ? "Dini Bilgiler" : `${feedName.charAt(0).toUpperCase() + feedName.slice(1)} Haberler`}
+                        <span>
+                            {feedName.charAt(0).toUpperCase() + feedName.slice(1) === "Spor" && (
+                                <div className="flex items-center gap-3">
+                                    <Link
+                                        href={`/feed/${feedName}/standings`}
+                                        className="text-[12px] py-1 px-3 border border-gray-200 bg-white rounded-lg font-semibold flex items-center gap-1 text-gray-500"
+                                    >
+                                        <IoIosFootball className="text-gray-500" size={15} /> Puan Durumu
+                                    </Link>
+                                    <Link
+                                        href={`/feed/${feedName}/fixtures`}
+                                        className="text-[12px] py-1 px-3 border border-gray-200 bg-white rounded-lg font-semibold flex items-center gap-1 text-gray-500"
+                                    >
+                                        <GiSoccerKick className="text-gray-500" size={15} /> Fikstür
+                                    </Link>
+                                </div>
+                            )}
+                        </span>
+                    </h1>
+                    <div className="mb-6 p-4 bg-gray-50 border-l-4 border-indigo-400 text-gray-700">
+                        <p>En son gelişmeleri ve önemli olayları takip edin. Bu sayfada, ilginizi çekebilecek en güncel haberler yer alıyor!</p>
+                    </div>
+                </>
             )}
 
             <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10">
