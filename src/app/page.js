@@ -19,7 +19,12 @@ function Page() {
 
     return (
         <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white px-10 pt-8 overflow-auto">
-            <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="text-3xl font-bold max-sm:text-[20px] text-gray-700 mb-4 text-center">
+            <motion.h1
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="text-3xl font-bold max-sm:text-[20px] text-gray-700 mb-4 text-center"
+            >
                 Sincaps.dev
             </motion.h1>
             <motion.p

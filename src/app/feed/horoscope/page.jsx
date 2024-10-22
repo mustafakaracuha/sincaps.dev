@@ -75,9 +75,9 @@ function HoroscopePage() {
             </div>
 
             {horoscopeListResult && selectedHoroscope && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-20">
                     <motion.div
-                        className="bg-white w-full h-full p-8 relative overflow-auto flex flex-col items-center justify-center"
+                        className="bg-white w-11/12 md:w-2/3 lg:w-1/2 h-auto p-8 relative overflow-auto flex flex-col items-center justify-center rounded-lg shadow-lg"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3 }}
@@ -86,12 +86,12 @@ function HoroscopePage() {
                             &times;
                         </button>
                         <div className="flex flex-col items-center">
-                            <div className={`${selectedHoroscope.color} text-5xl mb-4`}>{selectedHoroscope.icon}</div>
-                            <h2 className="max-sm:text-[15px] xl:text-2xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
-                            <p className="max-sm:text-[13px] xl:text-md mt-1 text-gray-500">{selectedHoroscope.date}</p>
+                            <div className={`${selectedHoroscope.color} text-4xl mb-4`}>{selectedHoroscope.icon}</div>
+                            <h2 className="max-sm:text-[15px] xl:text-xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
+                            <p className="max-sm:text-[13px] xl:text-sm mt-1 text-gray-500">{selectedHoroscope.date}</p>
                             <div className="mt-12 text-lg text-gray-600 px-4 max-w-xl">
-                                <p className="font-semibold max-sm:text-[13px] text-gray-700 mb-4">Günlük Burç Yorumu</p>
-                                <p className=" max-sm:text-[14px] xl:text-lg">{horoscopeListResult[0]?.title}</p>
+                                <p className="font-semibold max-sm:text-[13px] xl:text-md text-gray-700 mb-4">Günlük Burç Yorumu</p>
+                                <p className="max-sm:text-[14px] xl:text-[16px]">{horoscopeListResult[0]?.title}</p>
                             </div>
                         </div>
                     </motion.div>
