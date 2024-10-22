@@ -49,9 +49,7 @@ function HoroscopePage() {
                         <motion.div
                             key={index}
                             onClick={() => setSelectedHoroscope(horoscope)}
-                            className={`cursor-pointer p-6 flex flex-col items-center shadow-lg shadow-gray-200 rounded-2xl ${
-                                selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"
-                            } hover:bg-gray-50 transition-all`}
+                            className={`cursor-pointer p-6 flex flex-col items-center shadow-lg shadow-gray-200 rounded-2xl ${selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"}`}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}

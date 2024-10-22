@@ -24,7 +24,7 @@ const FeedPage = ({ params }) => {
         return (
             <div className="w-full flex flex-col items-center justify-center pt-10">
                 <LuSquirrel className="text-2xl text-gray-400 animate-pulse" />
-                <p className="mt-2 text-gray-600">Son haberler yükleniyor...</p>
+                <p className="mt-2 text-gray-500">Son haberler yükleniyor...</p>
             </div>
         );
     }
