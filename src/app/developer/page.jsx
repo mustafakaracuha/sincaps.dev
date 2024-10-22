@@ -92,7 +92,11 @@ function Developer() {
                             rows="4"
                             placeholder="Öneri veya görüşlerinizi bana bildirin."
                         ></textarea>
-                        <button disabled={!message} onClick={() => toast.success("Önerini aldım, teşekkürler 😉")} className=" bg-indigo-600 disabled:opacity-50 text-white py-2 px-4 max-sm:text-sm rounded-md">
+                        <button
+                            disabled={!message}
+                            onClick={() => toast.success("Önerini aldım, teşekkürler 😉")}
+                            className=" bg-indigo-600 disabled:opacity-50 text-white py-2 px-4 max-sm:text-sm rounded-md"
+                        >
                             Gönder
                         </button>
                     </motion.div>

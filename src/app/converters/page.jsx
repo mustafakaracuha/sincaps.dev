@@ -1,19 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { TbTemperatureSun } from "react-icons/tb";
-import { RiRulerLine } from "react-icons/ri";
 import { GiWeightScale, GiSpeedometer, GiMoneyStack, GiClockwork } from "react-icons/gi";
 
 const converters = [
-    { name: "Birim", icon: <RiRulerLine />, description: "Uzunluk, ağırlık, sıcaklık ve diğer ölçü birimleri arasında dönüşüm yapın.", color: "text-blue-400" },
-    { name: "Para Birimi", icon: <GiMoneyStack />, description: "Farklı ülkelerin para birimleri arasında dönüşüm yapın.", color: "text-green-400" },
-    { name: "Hız", icon: <GiSpeedometer />, description: "Km/s, mil/saat gibi hız birimleri arasında dönüşüm yapın.", color: "text-yellow-400" },
-    { name: "Ağırlık", icon: <GiWeightScale />, description: "Kilogram, pound ve diğer ağırlık birimleri arasında dönüşüm yapın.", color: "text-red-400" },
-    { name: "Sıcaklık", icon: <TbTemperatureSun />, description: "Santigrat, Fahrenheit gibi sıcaklık birimleri arasında dönüşüm yapın.", color: "text-orange-400" },
-    { name: "Süre", icon: <GiClockwork />, description: "Saat, dakika, saniye gibi zaman birimleri arasında dönüşüm yapın.", color: "text-purple-400" },
+    { name: "Para", icon: <GiMoneyStack />, description: "Farklı ülkelerin para birimleri arasında dönüşüm yapın.", color: "text-green-400", link: "/money" },
+    // { name: "Hız", icon: <GiSpeedometer />, description: "Km/s, mil/saat gibi hız birimleri arasında dönüşüm yapın.", color: "text-yellow-400", link: "/speed" },
+    // { name: "Ağırlık", icon: <GiWeightScale />, description: "Kilogram, pound ve diğer ağırlık birimleri arasında dönüşüm yapın.", color: "text-red-400", link: "/weight" },
+    // { name: "Sıcaklık", icon: <TbTemperatureSun />, description: "Santigrat, Fahrenheit gibi sıcaklık birimleri arasında dönüşüm yapın.", color: "text-orange-400", link: "/temp" },
+    // { name: "Süre", icon: <GiClockwork />, description: "Saat, dakika, saniye gibi zaman birimleri arasında dönüşüm yapın.", color: "text-purple-400", link: "/duration" },
 ];
 
 function Converter() {
@@ -56,7 +55,9 @@ function Converter() {
                                 <div className={`${converter.color} text-lg`}>{converter.icon}</div>
                             </div>
                             <h3 className="text-gray-400 text-[13px] mt-2 mb-4">{converter.description}</h3>
-                            <p className="text-indigo-500 text-[14px] font-medium hover:underline">Dönüştür</p>
+                            <Link href={`/converters/${converter.link}`} className="flex flex-col space-y-2 pt-1">
+                                <p className="text-indigo-500 text-[14px] font-medium hover:underline">Dönüştür</p>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

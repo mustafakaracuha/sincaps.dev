@@ -26,6 +26,7 @@ const liveSlice = createSlice({
         error: null,
     },
     reducers: {},
+
     extraReducers: (builder) => {
         builder
             .addCase(fetchLeagueResult.pending, (state) => {
