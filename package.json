@@ -1,6 +1,7 @@
 {
   "name": "sincaps.dev",
   "version": "1.0.0",
+  "author": "Mustafa Karaçuha",
   "private": true,
   "scripts": {
     "start": "next dev",

@@ -12,8 +12,8 @@ import developer from "../../assets/images/developer.jpg";
 function Developer() {
     return (
         <>
-            <div className="flex h-full p-10 items-start justify-center overflow-hidden">
-                <div className="max-w-xl rounded-xl flex flex-col items-center overflow-hidden p-6">
+            <div className="w-full flex h-full items-start justify-center overflow-hidden">
+                <div className="max-w-2xl rounded-xl flex flex-col items-center overflow-hidden p-10">
                     {/* Developer Image */}
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -24,7 +24,6 @@ function Developer() {
                         <Image src={developer} width={110} height={100} alt="Picture of the author" />
                     </motion.div>
 
-                    {/* Developer Name */}
                     <motion.h3
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -39,10 +38,10 @@ function Developer() {
                         Front End Developer
                     </motion.p>
 
-                    {/* About Me */}
-                    <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.4 }} className="text-center max-sm:text-sm text-gray-600 mt-2 mb-2">
-                        <span className="text-indigo-600 font-semibold">Sincaps</span>
-                        <span className="text-gray-500">.dev</span> / Tek sayfa, bir çok şey
+                    {/* Hakkımda */}
+                    <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.4 }} className="text-center max-sm:text-sm text-gray-600 mt-2 mb-4">
+                        4+ yıllık yazılım geliştirme deneyimi olan bir Front End geliştiriciyim. Modern web teknolojileriyle etkileşimli kullanıcı arayüzleri oluşturmayı seviyorum. Web performans
+                        optimizasyonu, responsive tasarım ve kullanıcı deneyimi üzerine çalışıyorum.
                     </motion.p>
 
                     {/* Teknolojiler */}
@@ -70,14 +69,24 @@ function Developer() {
                         </div>
                     </motion.div>
 
-                    {/* Social Links */}
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.6 }} className="flex justify-center space-x-4 mb-4 mt-4">
+                    {/* Sosyal Linkler */}
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.7 }} className="flex justify-center space-x-4 mb-4 mt-4">
                         <a href="https://github.com/mustafakaracuha" target="_blank" rel="noopener noreferrer">
                             <FaGithub className="text-gray-600 hover:text-black text-xl" />
                         </a>
                         <a href="https://www.linkedin.com/in/mustafakaracuha" target="_blank" rel="noopener noreferrer">
                             <FaLinkedinIn className="text-gray-600 hover:text-blue-600 text-xl" />
                         </a>
+                    </motion.div>
+
+                    {/* İletişim */}
+                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.8 }} className="text-center mt-8">
+                        <textarea
+                            className="w-[30rem] max-sm:w-[25rem] max-sm:text-sm max-sm:h-20 p-6 border border-gray-300 rounded-md mb-4 focus:outline-indigo-500"
+                            rows="4"
+                            placeholder="Öneri veya görüşlerinizi bana bildirin."
+                        ></textarea>
+                        <button className="bg-indigo-600 text-white py-2 px-4 max-sm:text-sm rounded-md">Bana Ulaşın</button>
                     </motion.div>
                 </div>
             </div>

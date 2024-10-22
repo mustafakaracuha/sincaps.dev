@@ -26,6 +26,10 @@ const SidebarMenu = () => {
         setIsFeedPage(pathname.includes("/feed") || pathname.includes("/converters"));
     }, [pathname]);
 
+    if (pathname.includes("/developer")) {
+        return null;
+    }
+
     return (
         <motion.div
             initial={{ opacity: 0, x: -10 }}

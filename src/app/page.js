@@ -38,7 +38,6 @@ function Page() {
                 Kullanıcıları en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
             </motion.p>
 
-            {/* Haberler Başlığı */}
             <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} className="text-lg font-semibold text-gray-600 mb-6">
                 Haberler
             </motion.h2>
@@ -63,7 +62,6 @@ function Page() {
                 ))}
             </div>
 
-            {/* Araçlar Başlığı */}
             <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="text-lg font-semibold text-gray-600 mt-12 mb-6">
                 Araçlar
             </motion.h2>
@@ -74,7 +72,7 @@ function Page() {
                         className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        transition={{ duration: 0.3, delay: 0.8 }}
                     >
                         <div className="w-full flex items-center justify-between mb-5">
                             <h3 className="text-sm font-semibold text-gray-600">{topic.title}</h3>
