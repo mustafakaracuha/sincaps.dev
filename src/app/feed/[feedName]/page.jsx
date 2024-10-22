@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion"; // Framer Motion ekle
+import { motion } from "framer-motion";
 
 import { IoIosFootball } from "react-icons/io";
 import { GiSoccerKick } from "react-icons/gi";
@@ -74,9 +74,9 @@ const FeedPage = ({ params }) => {
                             href={article.link}
                             target="_blank"
                             className="group block bg-white shadow-lg shadow-gray-200 rounded-2xl overflow-hidden"
-                            initial={{ opacity: 0, y: 20 }} // Başlangıç durumu
-                            animate={{ opacity: 1, y: 0 }} // Animasyon durumu
-                            transition={{ duration: 0.3, delay: index * 0.1 }} // Geçiş süresi ve gecikme
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
                         >
                             <div className="relative">
                                 {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-48 object-cover rounded-t-2xl" />}

@@ -38,13 +38,13 @@ function HoroscopePage() {
             <div className={`flex-1 ${selectedHoroscope ? "w-2/3" : "w-full"}`}>
                 <div className="mb-6">
                     <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">Burçlar</h1>
-                    <p className="text-md text-gray-500">
+                    <p className="max-sm:text-xs md:text-sm lg:text-md xl:text-md text-gray-500">
                         Gök kubbede yer alan 12 takımyıldızına burç denir. Bir insanın doğum anında Güneş hangi takımyıldızındaysa o, kişinin burcudur. Zodyak Kuşağında gezegenlerin seyri
                         takımyıldızlarıyla ilişkilendirildiğinde anlamı ve etkisi değişir.
                     </p>
                 </div>
 
-                <div className={"grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"}>
+                <div className={"grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-6 transition-all duration-300"}>
                     {horoscopes.map((horoscope, index) => (
                         <motion.div
                             key={index}

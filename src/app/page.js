@@ -17,10 +17,10 @@ function Page() {
 
     return (
         <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white px-10 pt-10 overflow-auto">
-            <h1 className="text-3xl font-bold text-gray-700 mb-4 text-center">Sincaps.dev</h1>
-            <p className="text-md font-normal text-gray-600 mb-10">
+            <h1 className="text-3xl font-bold max-sm:text-[20px] text-gray-700 mb-4 text-center">Sincaps.dev</h1>
+            <p className="max-sm:text-sm md:text-sm lg:text-md xl:text-[16px] font-normal text-gray-600 mb-10">
                 <strong className="text-indigo-600">Sincap.dev</strong>, kullanıcıların gündemden teknolojiye, ekonomiden spora kadar geniş bir yelpazede haberleri takip edebileceği bir platformdur.
-                Amacımız, kullanıcılarımızı en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
+                Kullanıcıları en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
