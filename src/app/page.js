@@ -1,8 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaTools, FaBook } from "react-icons/fa";
 import { motion } from "framer-motion";
+
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaTools, FaBook, FaCarCrash, FaAmbulance } from "react-icons/fa";
+import { PiTrafficSignFill } from "react-icons/pi";
+import { RiEarthquakeFill } from "react-icons/ri";
+import { IoIosColorPalette } from "react-icons/io";
+
 
 function Page() {
     const newsTopics = [
@@ -16,7 +21,14 @@ function Page() {
         { link: "burc", title: "Burçlar", description: "Günlük burç yorumlarınızı okuyun ve geleceğinizi öğrenin.", icon: <FaStar className="text-violet-500 text-lg" /> },
     ];
 
-    const toolTopics = [{ link: "donusturuculer", title: "Dönüştürücüler", description: "Günlük hayatınızda kullanabileceğiniz araçlar.", icon: <FaTools className="text-blue-500 text-lg" /> }];
+    const toolTopics = [
+        { link: "donusturuculer", title: "Dönüştürücüler", description: "Günlük hayatınızda kullanabileceğiniz araçlar.", icon: <FaTools className="text-blue-500 text-lg" /> },
+        { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" /> },
+        { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" /> },
+        { link: "acilnumaralar", title: "Acil Numaralar", description: "Acil durum numaraları", icon: <FaAmbulance className="text-lime-600 text-[19px]" /> },
+        { link: "deprem", title: "Deprem", description: "Deprem anında nasıl hareket etmeniz gerektiği hakkında", icon: <RiEarthquakeFill className="text-fuchsia-500 text-[19px]" /> },
+        { link: "renkler", title: "Renkler", description: "Renkler", icon: <IoIosColorPalette className="text-yellow-500 text-[19px]" /> },
+    ];
 
     return (
         <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">

@@ -15,7 +15,6 @@ export const fetchMoneyInfo = createAsyncThunk("money/fetchInfo", async () => {
         const currencExchange = $(element).find("td:nth-child(3)").text().trim(); // Kur alış
         const currencSales = $(element).find("td:nth-child(4)").text().trim(); // Son satış
 
-        // İkinci kolon içinde ikonun adını al
         const changeIconClass = $(element).find("td:nth-child(2) .change-icon").attr("class");
         let changeIcon = "";
 
