@@ -27,18 +27,11 @@ const SidebarMenu = () => {
     }, [pathname]);
 
     return (
-        <div className="w-[30rem] h-full overflow-y-auto max-sm:hidden px-16 pt-8 pb-20">
+        <div className="w-[30rem] h-full overflow-y-auto max-sm:hidden px-16 pt-8 pb-24 custom-scrollbar">
             <ul className="space-y-6">
                 <AnimatePresence>
                     {(isFeedPage ? topics : topics.filter((topic) => ["guncel", "spor", "ekonomi", "magazin"].includes(topic.link))).map((topic) => (
-                        <motion.li
-                            key={topic.link}
-                            className="cursor-pointer"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
-                        >
+                        <motion.li key={topic.link}>
                             <Link href={topic.link === "burc" ? `/feed/horoscope` : topic.link === "donusturuculer" ? `/converters` : `/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
                                 <h4 className="text-[15px] font-medium">{topic.title}</h4>
                                 <p className="text-[13px] text-gray-400 leading-5">{topic.description}</p>
