@@ -8,16 +8,16 @@ import { GiAries, GiTaurus, GiGemini, GiCancer, GiLeo, GiVirgo, GiLibra, GiScorp
 import { fetchHoroscope } from "../../../store/features/horoscopes/horoscopeSlice";
 
 const horoscopes = [
-    { name: "Koç", icon: <GiAries />, date: "21 Mar - 19 Nis", color: "text-red-400" },
-    { name: "Boğa", icon: <GiTaurus />, date: "20 Nis - 20 May", color: "text-green-400" },
-    { name: "İkizler", icon: <GiGemini />, date: "21 May - 20 Haz", color: "text-blue-400" },
+    { name: "Koc", icon: <GiAries />, date: "21 Mar - 19 Nis", color: "text-red-400" },
+    { name: "Boga", icon: <GiTaurus />, date: "20 Nis - 20 May", color: "text-green-400" },
+    { name: "Ikizler", icon: <GiGemini />, date: "21 May - 20 Haz", color: "text-blue-400" },
     { name: "Yengeç", icon: <GiCancer />, date: "21 Haz - 22 Tem", color: "text-purple-400" },
     { name: "Aslan", icon: <GiLeo />, date: "23 Tem - 22 Ağu", color: "text-yellow-400" },
     { name: "Başak", icon: <GiVirgo />, date: "23 Ağu - 22 Eyl", color: "text-gray-400" },
     { name: "Terazi", icon: <GiLibra />, date: "23 Eyl - 22 Eki", color: "text-pink-400" },
     { name: "Akrep", icon: <GiScorpio />, date: "23 Eki - 21 Kas", color: "text-pink-400" },
     { name: "Yay", icon: <GiSagittarius />, date: "22 Kas - 21 Ara", color: "text-orange-400" },
-    { name: "Oğlak", icon: <GiCapricorn />, date: "22 Ara - 19 Oca", color: "text-violet-400" },
+    { name: "Oglak", icon: <GiCapricorn />, date: "22 Ara - 19 Oca", color: "text-violet-400" },
     { name: "Kova", icon: <GiAquarius />, date: "20 Oca - 18 Şub", color: "text-teal-400" },
     { name: "Balık", icon: <GiPisces />, date: "19 Şub - 20 Mar", color: "text-cyan-400" },
 ];
@@ -75,11 +75,11 @@ function HoroscopePage() {
                         </button>
                         <div className="flex flex-col items-center">
                             <div className={`${selectedHoroscope.color} text-6xl mb-4`}>{selectedHoroscope.icon}</div>
-                            <h2 className="text-3xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
-                            <p className="text-lg mt-1 text-gray-500">{selectedHoroscope.date}</p>
-                            <div className="mt-6 text-lg text-gray-600 px-4 max-w-xl">
-                                <p className="font-semibold mb-4">Günlük Burç Yorumu</p>
-                                <p>{horoscopeListResult[0]?.title}</p>
+                            <h2 className="max-sm:text-[15px] xl:text-3xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
+                            <p className="max-sm:text-[13px] xl:text-lg mt-1 text-gray-500">{selectedHoroscope.date}</p>
+                            <div className="mt-10 text-lg text-gray-600 px-4 max-w-xl">
+                                <p className="font-semibold max-sm:text-[13px] text-gray-700 mb-4">Günlük Burç Yorumu</p>
+                                <p className=" max-sm:text-[14px] xl:text-lg">{horoscopeListResult[0]?.title}</p>
                             </div>
                         </div>
                     </motion.div>
