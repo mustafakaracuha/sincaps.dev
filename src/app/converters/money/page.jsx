@@ -125,7 +125,7 @@ function CurrencyConverter() {
                                 <option value="">Seçin</option>
                                 {moneyList.map((money, index) => (
                                     <option key={index} value={money.currencyName}>
-                                        {money.currencyName}
+                                        {money.currencyName + " " + `(${money.currencExchange})`}
                                     </option>
                                 ))}
                             </select>
@@ -139,7 +139,7 @@ function CurrencyConverter() {
                                 <option value="">Seçin</option>
                                 {moneyList.map((money, index) => (
                                     <option key={index} value={money.currencyName}>
-                                        {money.currencyName}
+                                       {money.currencyName + " " + `(${money.currencExchange})`}
                                     </option>
                                 ))}
                             </select>
