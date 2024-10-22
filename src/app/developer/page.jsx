@@ -12,19 +12,19 @@ function Developer() {
             <div className="flex h-full p-10 items-start justify-center overflow-hidden">
                 <div className="max-w-xl rounded-xl flex flex-col items-center overflow-hidden p-6">
                     {/* Developer Image */}
-                    <div className="w-32 h-32 rounded-full flex items-center justify-center border overflow-hidden mb-5">
-                        <Image src={developer} width={100} height={100} alt="Picture of the author" />
+                    <div className="w-32 h-32 max-sm:w-20 max-sm:h-20  xl:w-32 xl:h-32 rounded-full flex items-center justify-center border overflow-hidden mb-5 pt-6">
+                        <Image src={developer} width={110} height={100} alt="Picture of the author" />
                     </div>
 
                     {/* Developer Name */}
-                    <h3 className="text-xl text-center max-sm:text-md font-bold text-gray-700 mb-2">Mustafa Karaçuha</h3>
+                    <h3 className="text-xl text-center max-sm:text-[16px] font-bold text-gray-700 mb-2">Mustafa Karaçuha</h3>
 
                     {/* Role */}
-                    <p className="text-center max-sm:text-sm text-gray-400 mb-4">Front End Developer</p>
+                    <p className="text-center max-sm:text-[14px] text-gray-400 mb-4">Front End Developer</p>
 
                     {/* About Me */}
                     <p className="text-center max-sm:text-sm text-gray-600 mt-2 mb-2">
-                        <span className="text-indigo-600 font-semibold"> Sincaps</span>
+                        <span className="text-indigo-600 font-semibold">Sincaps</span>
                         <span className="text-gray-500">.dev</span> / Tek sayfa, bir çok şey
                     </p>
 

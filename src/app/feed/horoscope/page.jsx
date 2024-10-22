@@ -8,18 +8,18 @@ import { GiAries, GiTaurus, GiGemini, GiCancer, GiLeo, GiVirgo, GiLibra, GiScorp
 import { fetchHoroscope } from "../../../store/features/horoscopes/horoscopeSlice";
 
 const horoscopes = [
-    { name: "Koc", icon: <GiAries />, date: "21 Mar - 19 Nis", color: "text-red-400" },
-    { name: "Boga", icon: <GiTaurus />, date: "20 Nis - 20 May", color: "text-green-400" },
-    { name: "Ikizler", icon: <GiGemini />, date: "21 May - 20 Haz", color: "text-blue-400" },
-    { name: "Yengec", icon: <GiCancer />, date: "21 Haz - 22 Tem", color: "text-purple-400" },
+    { name: "Koç", icon: <GiAries />, date: "21 Mar - 19 Nis", color: "text-red-400" },
+    { name: "Boğa", icon: <GiTaurus />, date: "20 Nis - 20 May", color: "text-green-400" },
+    { name: "İkizler", icon: <GiGemini />, date: "21 May - 20 Haz", color: "text-blue-400" },
+    { name: "Yengeç", icon: <GiCancer />, date: "21 Haz - 22 Tem", color: "text-purple-400" },
     { name: "Aslan", icon: <GiLeo />, date: "23 Tem - 22 Ağu", color: "text-yellow-400" },
     { name: "Başak", icon: <GiVirgo />, date: "23 Ağu - 22 Eyl", color: "text-gray-400" },
     { name: "Terazi", icon: <GiLibra />, date: "23 Eyl - 22 Eki", color: "text-pink-400" },
     { name: "Akrep", icon: <GiScorpio />, date: "23 Eki - 21 Kas", color: "text-pink-400" },
     { name: "Yay", icon: <GiSagittarius />, date: "22 Kas - 21 Ara", color: "text-orange-400" },
-    { name: "Oglak", icon: <GiCapricorn />, date: "22 Ara - 19 Oca", color: "text-violet-400" },
+    { name: "Oğlak", icon: <GiCapricorn />, date: "22 Ara - 19 Oca", color: "text-violet-400" },
     { name: "Kova", icon: <GiAquarius />, date: "20 Oca - 18 Şub", color: "text-teal-400" },
-    { name: "Balik", icon: <GiPisces />, date: "19 Şub - 20 Mar", color: "text-cyan-400" },
+    { name: "Balık", icon: <GiPisces />, date: "19 Şub - 20 Mar", color: "text-cyan-400" },
 ];
 
 function HoroscopePage() {
@@ -63,18 +63,23 @@ function HoroscopePage() {
             </div>
 
             {horoscopeListResult && selectedHoroscope && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-10">
-                    <motion.div className="bg-white rounded-lg p-6 w-96 relative" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3 }}>
-                        <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-3 text-gray-500 hover:text-gray-700">
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <motion.div
+                        className="bg-white w-full h-full p-8 relative overflow-auto flex flex-col items-center justify-center"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <button onClick={() => setSelectedHoroscope("")} className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-4xl">
                             &times;
                         </button>
                         <div className="flex flex-col items-center">
-                            <div className={`${selectedHoroscope.color} text-4xl mb-3`}>{selectedHoroscope.icon}</div>
-                            <h2 className="text-md font-bold">{selectedHoroscope.name} Burcu</h2>
-                            <p className="text-xs mt-1 text-gray-500">{selectedHoroscope.date}</p>
-                            <div className="mt-6 text-sm text-gray-500">
-                                <p className="font-semibold mb-3 mt-2">Günlük Burç Yorumu</p>
-                                <p className="text-gray-600 text-[15px]">{horoscopeListResult[0]?.title}</p>
+                            <div className={`${selectedHoroscope.color} text-6xl mb-4`}>{selectedHoroscope.icon}</div>
+                            <h2 className="text-3xl font-bold mb-2">{selectedHoroscope.name} Burcu</h2>
+                            <p className="text-lg mt-1 text-gray-500">{selectedHoroscope.date}</p>
+                            <div className="mt-6 text-lg text-gray-600 px-4 max-w-xl">
+                                <p className="font-semibold mb-4">Günlük Burç Yorumu</p>
+                                <p>{horoscopeListResult[0]?.title}</p>
                             </div>
                         </div>
                     </motion.div>
