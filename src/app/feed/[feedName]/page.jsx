@@ -41,7 +41,7 @@ const FeedPage = ({ params }) => {
     }
 
     return (
-        <div className="w-full h-screen py-8 pb-20 px-10 overflow-auto">
+        <div className="w-full h-screen py-8 pb-20 px-10 overflow-auto custom-scrollbar-page">
             {newsArticles.length > 0 && (
                 <>
                     <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
