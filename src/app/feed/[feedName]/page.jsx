@@ -23,7 +23,7 @@ const FeedPage = ({ params }) => {
     if (loading) {
         return (
             <div className="w-full flex flex-col items-center justify-center pt-10">
-                <LuSquirrel className="text-2xl text-gray-400 animate-pulse" />
+                <LuSquirrel className="text-2xl text-gray-400 animate-bounce" />
                 <p className="mt-2 text-gray-500">{feedName === "dini-bilgiler" ? "Dini bilgiler yükleniyor..." : "Haberler yükleniyor..."}</p>
             </div>
         );
