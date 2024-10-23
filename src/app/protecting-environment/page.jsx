@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 import { FaRecycle, FaLightbulb, FaWater, FaTree, FaCarSide, FaApple } from "react-icons/fa";
 import { FaBottleDroplet } from "react-icons/fa6";
+import { GiFruitBowl } from "react-icons/gi";
 
 function page() {
     const environmentProtectionTips = [
@@ -42,7 +43,7 @@ function page() {
         {
             title: "Yerel Ürünleri Tercih Edin",
             description: "Yerel çiftçilerden alınan ürünler, taşımacılık nedeniyle oluşan karbon ayak izini azaltır.",
-            icon: <FaApple className="text-red-500" />,
+            icon: <GiFruitBowl className="text-red-500" />,
         },
     ];
 
