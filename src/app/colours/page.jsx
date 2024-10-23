@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 function page() {
     const colors = [
@@ -95,7 +98,7 @@ function page() {
     ];
 
     return (
-        <div className="w-full h-full py-8 px-10 pb-20 bg-white overflow-auto">
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full py-8 px-10 pb-20 bg-white overflow-auto">
             <h1 className="text-xl max-sm:text-[16px] font-semibold text-gray-700 text-start mb-4">Renkler</h1>
             <ul className="space-y-4">
                 {colors.map((color, index) => (
@@ -111,7 +114,7 @@ function page() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </motion.div>
     );
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaTachometerAlt, FaBeer, FaSeatbelt, FaMobileAlt, FaParking, FaTrafficLight } from "react-icons/fa";
+import { FaTachometerAlt, FaBeer, FaMobileAlt, FaParking, FaTrafficLight } from "react-icons/fa";
 import { PiSeatbeltFill } from "react-icons/pi";
 
 function page() {
