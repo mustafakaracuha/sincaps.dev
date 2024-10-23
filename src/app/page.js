@@ -113,7 +113,7 @@ function Page() {
                         </Link>
                     </motion.div>
                 ))}
-            </div>d
+            </div>
         </div>
     );
 }
