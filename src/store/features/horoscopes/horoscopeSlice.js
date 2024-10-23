@@ -3,7 +3,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-
 export const fetchHoroscope = createAsyncThunk("horoscopes/selecHoroscope", async (selectedHoroscope) => {
     const response = await axios.get(`https://www.mynet.com/kadin/burclar-astroloji/${selectedHoroscope.toLowerCase()}-burcu-gunluk-yorumu.html`);
 
