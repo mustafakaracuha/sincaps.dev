@@ -66,7 +66,7 @@ const FeedPage = ({ params }) => {
                         </span>
                     </h1>
                     {feedName === "guncel" && (
-                        <div className="mb-6 p-4 bg-gray-50 border-l-4 border-indigo-400 text-gray-700">
+                        <div className="mb-6 p-4 bg-gray-50 text-[14px] border-l-4 border-indigo-500 text-gray-400">
                             <p>Son dakika gelişmeleri ve önemli olayları takip edin. Bu sayfada, ilginizi çekebilecek en güncel haberler yer alıyor</p>
                         </div>
                     )}
