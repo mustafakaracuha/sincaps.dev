@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
@@ -12,12 +12,29 @@ import { fetchLastEarthquake } from "../../store/features/lastearthquake/lastEar
 
 function Page() {
     const { lastEarthquakeInfo, loading, error } = useSelector((state) => state.lastEarthquake);
+    const [selectedFilter, setSelectedFilter] = useState("all");
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchLastEarthquake());
     }, []);
+
+    const sortedEarthquakeInfo = [...lastEarthquakeInfo].sort((a, b) => b.mag - a.mag);
+
+    const filterOptions = [
+        { value: "all", label: "Son Depremler" },
+        { value: "5+", label: "5 ve Üzeri" },
+        { value: "3-5", label: "3 - 5 Arası" },
+        { value: "under3", label: "3'ten Küçük" },
+    ];
+
+    const filteredEarthquakeInfo = sortedEarthquakeInfo.filter((quake) => {
+        if (selectedFilter === "5+") return quake.mag >= 5;
+        if (selectedFilter === "3-5") return quake.mag >= 3 && quake.mag < 5;
+        if (selectedFilter === "under3") return quake.mag < 3;
+        return true;
+    });
 
     if (loading) {
         return (
@@ -39,16 +56,34 @@ function Page() {
         );
     }
 
+    const getMagnitudeColor = (magnitude) => {
+        if (magnitude >= 5) return "bg-red-50 text-red-600";
+        if (magnitude >= 3) return "bg-yellow-100 text-yellow-700";
+        return "bg-blue-100 text-blue-600";
+    };
+
     return (
         <div className="w-full h-full pb-24 bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.3 }} className="w-full flex items-center justify-between mb-4">
-                <h1 className="text-xl max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">Son Depremler</h1>
-                <button onClick={() => dispatch(fetchLastEarthquake())} className={loading ? "animate-spin" : " text-gray-500"}>
-                    <FiRefreshCw size={17} />
-                </button>
+                <select
+                    value={selectedFilter}
+                    onChange={(e) => setSelectedFilter(e.target.value)}
+                    className="text-xl max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start"
+                >
+                    {filterOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+                <div className="space-x-6">
+                    <button onClick={() => dispatch(fetchLastEarthquake())} className={loading ? "animate-spin" : " text-gray-500"}>
+                        <FiRefreshCw size={17} />
+                    </button>
+                </div>
             </motion.div>
             <div className="space-y-4">
-                {lastEarthquakeInfo.map((quake, index) => (
+                {filteredEarthquakeInfo.map((quake, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
@@ -63,9 +98,9 @@ function Page() {
                                 <p className="text-xs max-sm:text-[11px] text-gray-500">Tarih: {quake.date}</p>
                             </div>
                         </div>
-                        <div className="w-32 text-start px-4 py-2 bg-gray-100 rounded-md">
-                            <p className="text-sm max-sm:text-[12px] text-gray-600 font-extrabold mb-1">Büyüklük: {quake.mag}</p>
-                            <p className="text-xs max-sm:text-[12px] text-gray-500">Derinlik: {quake.depth}</p>
+                        <div className={`w-32 text-start px-4 py-2 rounded-md ${getMagnitudeColor(quake.mag)}`}>
+                            <p className="text-sm max-sm:text-[12px] font-extrabold mb-1">Büyüklük: {quake.mag}</p>
+                            <p className="text-xs max-sm:text-[12px]">Derinlik: {quake.depth} km</p>
                         </div>
                     </motion.div>
                 ))}
