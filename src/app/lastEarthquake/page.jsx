@@ -21,7 +21,7 @@ function Page() {
     return (
         <div className="w-full h-full pb-24 bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.3 }} className="w-full flex items-center justify-between mb-4">
-                <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">Son Depremler</h1>
+                <h1 className="text-xl max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">Son Depremler</h1>
                 <button onClick={() => dispatch(fetchLastEarthquake())} className={loading ? "animate-spin" : " text-gray-500"}>
                     <FiRefreshCw size={17} />
                 </button>
