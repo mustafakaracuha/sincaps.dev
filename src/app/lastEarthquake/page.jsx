@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 import { FiRefreshCw } from "react-icons/fi";
-import { IoLocation } from "react-icons/io5";
+import { WiEarthquake } from "react-icons/wi";
 
 import { fetchLastEarthquake } from "../../store/features/lastearthquake/lastEarthquakeSlice";
 
@@ -36,7 +36,7 @@ function Page() {
                         className="p-4 border border-gray-200 rounded-lg shadow-sm flex justify-between items-center bg-white"
                     >
                         <div className="flex items-center gap-2">
-                            <IoLocation size={25} className="text-red-400 max-sm:hidden animate-pulse" />
+                            <WiEarthquake size={30} className="text-red-400 max-sm:hidden" />
                             <div>
                                 <h2 className="text-md max-sm:text-[12px] font-semibold text-gray-800 mb-1">{quake.title}</h2>
                                 <p className="text-xs max-sm:text-[11px] text-gray-500">Tarih: {quake.date}</p>
