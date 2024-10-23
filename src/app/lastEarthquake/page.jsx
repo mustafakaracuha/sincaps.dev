@@ -10,7 +10,6 @@ import { IoLocation } from "react-icons/io5";
 import { fetchLastEarthquake } from "../../store/features/lastearthquake/lastEarthquakeSlice";
 
 function Page() {
-    const [earthquakes, setEarthquakes] = useState([]);
     const { lastEarthquakeInfo, loading } = useSelector((state) => state.lastEarthquake);
 
     const dispatch = useDispatch();
