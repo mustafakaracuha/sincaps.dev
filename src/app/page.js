@@ -59,7 +59,7 @@ function Page() {
             >
                 Haberler
             </motion.h2>
-            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
+            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
                 {newsTopics.map((topic, index) => (
                     <motion.div
                         key={index}
@@ -88,7 +88,7 @@ function Page() {
             >
                 Bilgilendirme
             </motion.h2>
-            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
+            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
                 {toolTopics.map((topic, index) => (
                     <motion.div
                         key={index}
