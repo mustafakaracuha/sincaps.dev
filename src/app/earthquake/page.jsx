@@ -29,7 +29,7 @@ function Page() {
                 "İş aletlerinin bulunduğu mutfak, imalathane, laboratuvar gibi yerlerde; ocak, fırın ve benzeri cihazlar kapatılmalı, dökülebilecek malzeme ve maddelerden uzaklaşılmalıdır.",
                 "Sarsıntı geçtikten sonra doğal gaz, elektrik ve su vanaları kapatılmalı, soba ve ısıtıcılar söndürülmelidir.",
                 "Diğer güvenlik önlemleri uygulandıktan sonra, gerekli eşya ve malzemeler alınarak bina, daha önceden tespit edilmiş yoldan derhal terk edilerek toplanma bölgesine gidilmelidir.",
-                "Okulda, sınıfta ya da büroda isek sağlam sıra ve masaların altında veya yanında; koridorda isek duvarın yanında hayat üçgeni oluşturacak biçimde <span className='font-semibold text-blue-600'>ÇÖK-KAPAN-TUTUN</span> hareketi yapılarak baş ve boyun korunmalıdır.",
+                "Okulda, sınıfta ya da büroda isek sağlam sıra ve masaların altında veya yanında; koridorda isek duvarın yanında hayat üçgeni oluşturacak biçimde ÇÖK-KAPAN-TUTUN hareketi yapılarak baş ve boyun korunmalıdır.",
                 "Pencerelerden ve camdan yapılmış eşyalardan uzak durulmalıdır.",
             ],
         },
