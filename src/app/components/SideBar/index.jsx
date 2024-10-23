@@ -22,7 +22,7 @@ const SidebarMenu = () => {
     const pathname = usePathname();
 
     useEffect(() => {
-        setIsFeedPage(pathname.includes("/feed") || pathname.includes("/converters"));
+        setIsFeedPage(pathname.includes("/feed"));
     }, [pathname]);
 
     if (pathname.includes("/developer")) {
@@ -40,7 +40,7 @@ const SidebarMenu = () => {
                 <AnimatePresence>
                     {(isFeedPage ? topics : topics.filter((topic) => ["guncel", "spor", "ekonomi", "magazin"].includes(topic.link))).map((topic) => (
                         <motion.li key={topic.link}>
-                            <Link href={topic.link === "burc" ? `/feed/horoscope` : topic.link === "donusturuculer" ? `/converters` : `/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
+                            <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
                                 <h4 className="text-[15px] font-medium">{topic.title}</h4>
                                 <p className="text-[13px] text-gray-400 leading-5">{topic.description}</p>
                             </Link>
