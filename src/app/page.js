@@ -22,12 +22,12 @@ function Page() {
     ];
 
     const toolTopics = [
-        { link: "deprem", title: "Deprem", description: "Deprem anında nasıl hareket etmeniz gerektiği hakkında", icon: <RiEarthquakeFill className="text-fuchsia-500 text-[19px]" /> },
-        { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" /> },
-        { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" /> },
-        { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" /> },
-        { link: "acilnumaralar", title: "Acil Numaralar", description: "Acil durum numaraları", icon: <FaAmbulance className="text-lime-600 text-[19px]" /> },
-        { link: "renkler", title: "Renkler", description: "Renkler", icon: <IoIosColorPalette className="text-yellow-500 text-[19px]" /> },
+        { link: "deprem", title: "Deprem", description: "Deprem anında nasıl hareket etmeniz gerektiği hakkında", icon: <RiEarthquakeFill className="text-fuchsia-500 text-[19px]" />, link: "/earthquake" },
+        { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, link: "/lastearthquake" },
+        { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, link: "/trafficfine" },
+        { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, link: "/trafficrules" },
+        { link: "acilnumaralar", title: "Acil Numaralar", description: "Acil durum numaraları", icon: <FaAmbulance className="text-lime-600 text-[19px]" />, link: "/emergencynumbers"  },
+        { link: "renkler", title: "Renkler", description: "Renkler", icon: <IoIosColorPalette className="text-yellow-500 text-[19px]" />, link: "/colours" },
     ];
 
     return (
@@ -91,7 +91,7 @@ function Page() {
                             <div>{topic.icon}</div>
                         </div>
                         <p className="text-gray-400 text-[13px] mt-2 mb-4">{topic.description}</p>
-                        <Link href={`/converters`} className="text-indigo-500 text-[14px] font-medium hover:underline">
+                        <Link href={topic.link} className="text-indigo-500 text-[14px] font-medium hover:underline">
                             oku
                         </Link>
                     </motion.div>
