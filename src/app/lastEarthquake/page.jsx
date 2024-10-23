@@ -68,7 +68,7 @@ function Page() {
                 <select
                     value={selectedFilter}
                     onChange={(e) => setSelectedFilter(e.target.value)}
-                    className="text-xl max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start"
+                    className="text-xl max-sm:text-[15px] flex items-center outline-none justify-between gap-4 font-semibold text-gray-600 text-start"
                 >
                     {filterOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -76,11 +76,9 @@ function Page() {
                         </option>
                     ))}
                 </select>
-                <div className="space-x-6">
-                    <button onClick={() => dispatch(fetchLastEarthquake())} className={loading ? "animate-spin" : " text-gray-500"}>
-                        <FiRefreshCw size={17} />
-                    </button>
-                </div>
+                <button onClick={() => dispatch(fetchLastEarthquake())} className={loading ? "animate-spin" : " text-gray-500"}>
+                    <FiRefreshCw size={17} />
+                </button>
             </motion.div>
             <div className="space-y-4">
                 {filteredEarthquakeInfo.map((quake, index) => (
