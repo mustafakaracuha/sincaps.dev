@@ -6,17 +6,38 @@ import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { FiRefreshCw } from "react-icons/fi";
 import { WiEarthquake } from "react-icons/wi";
+import { LuSquirrel } from "react-icons/lu";
 
 import { fetchLastEarthquake } from "../../store/features/lastearthquake/lastEarthquakeSlice";
 
 function Page() {
-    const { lastEarthquakeInfo, loading } = useSelector((state) => state.lastEarthquake);
+    const { lastEarthquakeInfo, loading, error } = useSelector((state) => state.lastEarthquake);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchLastEarthquake());
     }, []);
+
+    if (loading) {
+        return (
+            <div className="w-full flex flex-col items-center justify-center pt-10">
+                <LuSquirrel className="text-2xl text-gray-400 animate-pulse" />
+                <p className="mt-2 text-gray-500">Son depremler yükleniyor...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="text-center text-red-500">
+                <p>Hata: {error}</p>
+                <button onClick={() => dispatch(fetchNews(feedName))} className="text-blue-500 hover:underline">
+                    Tekrar Dene
+                </button>
+            </div>
+        );
+    }
 
     return (
         <div className="w-full h-full pb-24 bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">
