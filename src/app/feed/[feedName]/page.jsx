@@ -44,7 +44,7 @@ const FeedPage = ({ params }) => {
         <div className="w-full h-screen py-8 pb-20 px-10 overflow-auto custom-scrollbar-page">
             {newsArticles.length > 0 && (
                 <>
-                    <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
+                    <h1 className="text-xl max-sm:text-[14px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
                         {feedName === "dini-bilgiler" ? "Dini Bilgiler" : `${feedName.charAt(0).toUpperCase() + feedName.slice(1)} Haberler`}
                         <span>
                             {feedName.charAt(0).toUpperCase() + feedName.slice(1) === "Spor" && (
@@ -66,14 +66,14 @@ const FeedPage = ({ params }) => {
                         </span>
                     </h1>
                     {feedName === "guncel" && (
-                        <div className="mb-6 p-4 bg-gray-50 text-[14px] border-l-4 border-indigo-500 text-gray-400">
+                        <div className="mb-6 p-4 bg-gray-50  max-sm:text-[12px] text-[14px] border-l-4 border-indigo-500 text-gray-400">
                             <p>Son dakika gelişmeleri ve önemli olayları takip edin. Bu sayfada, ilginizi çekebilecek en güncel haberler yer alıyor</p>
                         </div>
                     )}
                 </>
             )}
 
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10">
+            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10">
                 {newsArticles.length > 0 &&
                     newsArticles.map((article, index) => (
                         <motion.a
@@ -86,11 +86,11 @@ const FeedPage = ({ params }) => {
                             transition={{ duration: 0.3, delay: index * 0.1 }}
                         >
                             <div className="relative">
-                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-48 object-cover rounded-lg" />}
+                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-48 max-sm:h-20 object-cover rounded-lg" />}
                                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
                             </div>
                             <div className="py-8 px-6">
-                                <h4 className="text-md font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
+                                <h4 className="text-md  max-sm:text-[11px] font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
                             </div>
                         </motion.a>
                     ))}
