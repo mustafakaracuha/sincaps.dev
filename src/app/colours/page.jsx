@@ -102,7 +102,13 @@ function page() {
             <h1 className="text-xl max-sm:text-[16px] font-semibold text-gray-700 text-start mb-4">Renkler</h1>
             <ul className="space-y-4">
                 {colors.map((color, index) => (
-                    <li key={index} className="p-4 border border-gray-200 rounded-lg shadow-sm flex items-center gap-4">
+                    <motion.li
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                        className="p-4 border border-gray-200 rounded-lg shadow-sm flex items-center gap-4"
+                    >
                         {color.colorBox}
                         <div className="flex-1">
                             <div className="flex justify-between items-center">
@@ -111,7 +117,7 @@ function page() {
                             </div>
                             <p className="text-gray-500 text-[14px] max-sm:text-[13px] mb-1">{color.description}</p>
                         </div>
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
         </motion.div>

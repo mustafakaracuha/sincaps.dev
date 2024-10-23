@@ -52,13 +52,19 @@ function page() {
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">Trafik Kuralları</h1>
             <ul className="space-y-4">
                 {trafficRules.map((rule, index) => (
-                    <li key={index} className="p-4 border border-gray-200 rounded-lg shadow-sm flex items-start gap-4">
+                    <motion.li
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                        className="p-4 border border-gray-200 rounded-lg shadow-sm flex items-start gap-4"
+                    >
                         <div className="text-xl">{rule.icon}</div>
                         <div>
                             <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-2">{rule.title}</h2>
                             <p className="text-[14px] max-sm:text-[13px] text-gray-600">{rule.description}</p>
                         </div>
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
         </motion.div>

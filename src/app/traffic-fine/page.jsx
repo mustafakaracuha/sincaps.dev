@@ -62,8 +62,14 @@ function page() {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full overflow-auto pb-24 px-10 py-8">
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">2024 Yılı Türkiye Trafik Cezaları</h1>
             <div className="space-y-4">
-                {trafficFines.map((fine) => (
-                    <div key={fine.id} className={`p-4 border border-gray-200 rounded-lg shadow-sm flex items-start gap-4`}>
+                {trafficFines.map((fine, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                        className={`p-4 border border-gray-200 rounded-lg shadow-sm flex items-start gap-4`}
+                    >
                         <div>{fine.icon}</div>
                         <div>
                             <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-1">{fine.title}</h2>
@@ -73,7 +79,7 @@ function page() {
                                 </p>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </motion.div>
