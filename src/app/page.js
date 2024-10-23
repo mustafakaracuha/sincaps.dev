@@ -57,7 +57,12 @@ function Page() {
                 yetişmesine katkıda bulunur.
             </motion.p>
 
-            <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} className="text-lg max-sm:text-[14px] font-semibold text-gray-600 mb-6">
+            <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                className="text-lg max-sm:text-[14px] font-semibold text-gray-600 mb-6"
+            >
                 Haberler
             </motion.h2>
             <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
@@ -81,7 +86,12 @@ function Page() {
                 ))}
             </div>
 
-            <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.5 }} className="text-lg max-sm:text-[14px] font-semibold text-gray-600 mt-12 mb-6">
+            <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+                className="text-lg max-sm:text-[14px] font-semibold text-gray-600 mt-12 mb-6"
+            >
                 Bilgilendirme
             </motion.h2>
             <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
