@@ -1,12 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaTachometerAlt, FaBeer, FaSeatbelt, FaMobileAlt, FaParking, FaTrafficLight } from "react-icons/fa";
+import { PiSeatbeltFill } from "react-icons/pi";
 
 function page() {
     const trafficFines = [
         {
             id: 1,
             title: "Hız Sınırını Aşma",
+            icon: <FaTachometerAlt className="text-red-500 text-xl" />,
             color: "border-red-500",
             details: [
                 { description: "Hız sınırını %10-%30 oranında aşma cezası", fine: "951 TL" },
@@ -17,6 +20,7 @@ function page() {
         {
             id: 2,
             title: "Alkollü Araç Kullanma",
+            icon: <FaBeer className="text-yellow-500 text-xl" />,
             color: "border-yellow-500",
             details: [
                 { description: "İlk sefer alkollü araç kullanma cezası", fine: "6.439 TL" },
@@ -27,24 +31,28 @@ function page() {
         {
             id: 3,
             title: "Emniyet Kemeri Takmama",
+            icon: <PiSeatbeltFill className="text-blue-500 text-xl" />,
             color: "border-blue-500",
             details: [{ description: "Emniyet kemeri kullanmama cezası", fine: "691 TL" }],
         },
         {
             id: 4,
             title: "Cep Telefonu Kullanma",
+            icon: <FaMobileAlt className="text-green-500 text-xl" />,
             color: "border-green-500",
             details: [{ description: "Araç kullanırken cep telefonu kullanma cezası", fine: "1.507 TL" }],
         },
         {
             id: 5,
             title: "Park İhlalleri",
+            icon: <FaParking className="text-purple-500 text-xl" />,
             color: "border-purple-500",
             details: [{ description: "Yasak yere park etme cezası", fine: "691 TL" }],
         },
         {
             id: 6,
             title: "Kırmızı Işık İhlali",
+            icon: <FaTrafficLight className="text-orange-500 text-xl" />,
             color: "border-orange-500",
             details: [{ description: "Kırmızı ışıkta geçme cezası", fine: "951 TL" }],
         },
@@ -55,13 +63,16 @@ function page() {
             <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">2024 Yılı Türkiye Trafik Cezaları</h1>
             <div className="space-y-4">
                 {trafficFines.map((fine) => (
-                    <div key={fine.id} className={`p-4 bg-gray-50 border-l-4 ${fine.color}`}>
-                        <h2 className="text-md font-semibold text-gray-700 mb-1">{fine.title}</h2>
-                        {fine.details.map((detail, index) => (
-                            <p key={index} className="text-gray-600 text-[14px]">
-                                {detail.description}: <strong>{detail.fine}</strong>
-                            </p>
-                        ))}
+                    <div key={fine.id} className={`p-4 border border-gray-200 rounded-lg shadow-sm flex items-start gap-4`}>
+                        <div>{fine.icon}</div>
+                        <div>
+                            <h2 className="ext-md max-sm:text-[14px] font-semibold text-gray-700 mb-2">{fine.title}</h2>
+                            {fine.details.map((detail, index) => (
+                                <p key={index} className="text-gray-600 text-[14px] max-sm:text-[13px] mb-1">
+                                    {detail.description}: <strong>{detail.fine}</strong>
+                                </p>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>
