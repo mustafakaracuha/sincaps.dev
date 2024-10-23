@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 export const metadata = {
     title: "Sincaps.dev",
     description:
-        "Sincaps.dev, kullanıcıların en güncel haberleri takip edebileceği, teknoloji, sağlık, spor, eğitim ve daha birçok alanda bilgiye ulaşabileceği dinamik bir platformdur. Haberlerden araçlara kadar geniş bir içerik yelpazesi sunarak bilgi edinmenizi kolaylaştırıyoruz.",
+        "Sincaps.dev, doğru ve güvenilir kaynaklar sunarak toplumu bilgilendirir, güncel haberler ve analizlerle kullanıcıların gelişen olaylara dair farkındalığını artırır. Eğitim, sağlık, çevre gibi toplumu ilgilendiren önemli konularda da içerikler sunarak, kullanıcılarının sosyal sorumluluklarını destekler ve bilinçli bireyler yetişmesine katkıda bulunur.",
 };
 
 export default function RootLayout({ children }) {
