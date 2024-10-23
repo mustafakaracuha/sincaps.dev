@@ -29,6 +29,7 @@ function Page() {
             path: "/earthquake",
         },
         { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, path: "/recent-earthquakes" },
+        { link: "nobetcieczane", title: "Nöbetçi Eczaneler", description: "Size en yakın nöbetçi eczaneler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, path: "/recent-earthquakes" },
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, path: "/traffic-rules" },
         { link: "cevreyikorumak", title: "Çevreyi Korumak", description: "Çevreyi korumak hakkında", icon: <FaTree className="text-lime-600 text-[18px]" />, path: "/protecting-environment" },
@@ -63,7 +64,7 @@ function Page() {
             >
                 Haberler
             </motion.h2>
-            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
+            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
                 {newsTopics.map((topic, index) => (
                     <motion.div
                         key={index}
@@ -92,7 +93,7 @@ function Page() {
             >
                 Bilgilendirme
             </motion.h2>
-            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
+            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
                 {toolTopics.map((topic, index) => (
                     <motion.div
                         key={index}
