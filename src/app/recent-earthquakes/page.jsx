@@ -57,7 +57,7 @@ function Page() {
                         className="p-4 border-b border-gray-100 flex justify-between items-center bg-white"
                     >
                         <div className="flex items-center gap-2">
-                            <WiEarthquake size={30} className="text-red-400 max-sm:hidden" />
+                            <WiEarthquake size={30} className="text-red-400" />
                             <div>
                                 <h2 className="text-sm max-sm:text-[12px] font-semibold text-gray-800 mb-1">{quake.title}</h2>
                                 <p className="text-xs max-sm:text-[11px] text-gray-500">Tarih: {quake.date}</p>
