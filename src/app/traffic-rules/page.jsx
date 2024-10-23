@@ -50,14 +50,14 @@ function page() {
     return (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full py-8 px-10 pb-20 bg-white overflow-auto">
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">Trafik Kuralları</h1>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
                 {trafficRules.map((rule, index) => (
                     <motion.li
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.3 }}
-                        className="p-4 border border-gray-200 rounded-lg shadow-sm flex items-center gap-4"
+                        className="p-4 border-b border-gray-100 flex items-center gap-4"
                     >
                         <div className="text-xl">{rule.icon}</div>
                         <div>

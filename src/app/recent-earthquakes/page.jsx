@@ -54,7 +54,7 @@ function Page() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.3 }}
-                        className="p-4 border border-gray-200 rounded-lg shadow-sm flex justify-between items-center bg-white"
+                        className="p-4 border-b border-gray-100 flex justify-between items-center bg-white"
                     >
                         <div className="flex items-center gap-2">
                             <WiEarthquake size={30} className="text-red-400 max-sm:hidden" />

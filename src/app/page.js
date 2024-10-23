@@ -7,6 +7,7 @@ import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, 
 import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { WiEarthquake } from "react-icons/wi";
+import { GiMedicines } from "react-icons/gi";
 
 function Page() {
     const newsTopics = [
@@ -29,7 +30,7 @@ function Page() {
             path: "/earthquake",
         },
         { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, path: "/recent-earthquakes" },
-        { link: "nobetcieczane", title: "Nöbetçi Eczaneler", description: "Size en yakın nöbetçi eczaneler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, path: "/recent-earthquakes" },
+        { link: "nobetcieczane", title: "Nöbetçi Eczaneler", description: "Şehrinizdeki nöbetçi eczaneler", icon: <GiMedicines className="text-yellow-500 text-[22px]" />, path: "/pharmacies-oncall" },
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, path: "/traffic-rules" },
         { link: "cevreyikorumak", title: "Çevreyi Korumak", description: "Çevreyi korumak hakkında", icon: <FaTree className="text-lime-600 text-[18px]" />, path: "/protecting-environment" },
