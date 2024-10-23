@@ -37,12 +37,7 @@ const NavBar = () => {
     return (
         <nav className="bg-white border-b border-gray-200 py-4">
             <div className="flex justify-between items-center px-16">
-                <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    className="text-xl font-bold text-gray-800 flex items-center space-x-2"
-                >
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="text-xl font-bold text-gray-800 flex items-center space-x-2">
                     <Link href="/" className="flex items-center gap-2">
                         <LuSquirrel className="text-indigo-600" size={30} />
                         <span className="text-indigo-600">
