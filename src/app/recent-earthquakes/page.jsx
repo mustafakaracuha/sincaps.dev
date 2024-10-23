@@ -41,7 +41,8 @@ function Page() {
 
     return (
         <div className="w-full h-full pb-24 bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.3 }} className="w-full flex items-center justify-end mb-4">
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.3 }} className="w-full flex items-center justify-between mb-6">
+            <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">Son Depremler</h1>
                 <button onClick={() => dispatch(fetchLastEarthquake())} className={loading ? "animate-spin" : " text-gray-500"}>
                     <FiRefreshCw size={17} />
                 </button>
@@ -60,12 +61,10 @@ function Page() {
                             <div>
                                 <h2 className="text-sm max-sm:text-[12px] font-semibold text-gray-800 mb-1">{quake.title}</h2>
                                 <p className="text-xs max-sm:text-[11px] text-gray-500">Tarih: {quake.date}</p>
+                                <p className="text-xs max-sm:text-[12px] text-gray-500 mt-1">Derinlik {quake.depth} km</p>
                             </div>
                         </div>
-                        <div className={`text-start px-4 flex-col items-start justify-center py-2 rounded-md`}>
-                            <p className="w-auto text-sm p-2 bg-red-500 text-white text-center rounded-full max-sm:text-[12px] font-extrabold mb-2">{quake.mag}</p>
-                            <p className="text-xs max-sm:text-[12px]">{quake.depth} km</p>
-                        </div>
+                        <p className="w-auto text-sm p-2 bg-red-500 text-white text-center rounded-full max-sm:text-[12px] font-extrabold mb-2">{quake.mag}</p>
                     </motion.div>
                 ))}
             </div>
