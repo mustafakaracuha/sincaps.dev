@@ -62,7 +62,7 @@ function page() {
                         <div className="text-xl">{rule.icon}</div>
                         <div>
                             <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-2">{rule.title}</h2>
-                            <p className="text-[14px] max-sm:text-[13px] text-gray-600">{rule.description}</p>
+                            <p className="text-[14px] max-sm:text-[13px] text-gray-500">{rule.description}</p>
                         </div>
                     </motion.li>
                 ))}

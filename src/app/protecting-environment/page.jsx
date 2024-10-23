@@ -61,7 +61,7 @@ function page() {
                         <div className="text-xl">{tip.icon}</div>
                         <div>
                             <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-2">{tip.title}</h2>
-                            <p className="text-[14px] max-sm:text-[13px] text-gray-600">{tip.description}</p>
+                            <p className="text-[14px] max-sm:text-[13px] text-gray-500">{tip.description}</p>
                         </div>
                     </motion.li>
                 ))}

@@ -74,7 +74,7 @@ function page() {
                         <div>
                             <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-1">{fine.title}</h2>
                             {fine.details.map((detail, index) => (
-                                <p key={index} className="text-gray-600 text-[14px] max-sm:text-[13px] mb-1">
+                                <p key={index} className="text-gray-500 text-[14px] max-sm:text-[13px] mb-1">
                                     {detail.description}: <strong>{detail.fine}</strong>
                                 </p>
                             ))}
