@@ -46,7 +46,7 @@ function page() {
 
     return (
         <div className="w-full h-full py-8 px-10 pb-20 bg-white overflow-auto">
-            <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">Trafik Kuralları</h1>
+            <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">Trafik Kuralları</h1>
             <ul className="space-y-4">
                 {trafficRules.map((rule, index) => (
                     <li key={index} className="p-4 border border-gray-200 rounded-lg shadow-sm flex items-start gap-4">

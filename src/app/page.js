@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaAmbulance } from "react-icons/fa";
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaPhone } from "react-icons/fa";
 import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { IoIosColorPalette } from "react-icons/io";
@@ -26,7 +26,7 @@ function Page() {
         { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, path: "/recent-earthquakes" },
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, path: "/traffic-rules" },
-        { link: "acilnumaralar", title: "Acil Numaralar", description: "Acil durum numaraları", icon: <FaAmbulance className="text-lime-600 text-[19px]" />, path: "/emergency-numbers" },
+        { link: "acilnumaralar", title: "Acil Durum Numaralar", description: "Acil durum numaraları", icon: <FaPhone className="text-lime-600 text-[15px]" />, path: "/emergency-numbers" },
         { link: "renkler", title: "Renkler", description: "Renkler", icon: <IoIosColorPalette className="text-yellow-500 text-[19px]" />, path: "/colours" },
     ];
 
