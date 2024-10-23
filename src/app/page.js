@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaPhone } from "react-icons/fa";
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaAmbulance, FaPhone } from "react-icons/fa";
 import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { IoIosColorPalette } from "react-icons/io";
@@ -65,24 +65,24 @@ function Page() {
             >
                 Haberler
             </motion.h2>
-            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
+            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
                 {newsTopics.map((topic, index) => (
-                    <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium">
-                        <motion.div
-                            key={index}
-                            className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                        >
-                            <div className="w-full flex items-center justify-between mb-4">
-                                <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
-                                <div>{topic.icon}</div>
-                            </div>
-                            <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
+                    <motion.div
+                        key={index}
+                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                        <div className="w-full flex items-center justify-between mb-4">
+                            <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
+                            <div>{topic.icon}</div>
+                        </div>
+                        <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
+                        <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             incele
-                        </motion.div>
-                    </Link>
+                        </Link>
+                    </motion.div>
                 ))}
             </div>
 
@@ -94,26 +94,26 @@ function Page() {
             >
                 Bilgilendirme
             </motion.h2>
-            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
+            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
                 {toolTopics.map((topic, index) => (
-                    <Link href={topic.path} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium">
-                        <motion.div
-                            key={index}
-                            className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.8 }}
-                        >
-                            <div className="w-full flex items-center justify-between mb-5">
-                                <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
-                                <div>{topic.icon}</div>
-                            </div>
-                            <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
+                    <motion.div
+                        key={index}
+                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.8 }}
+                    >
+                        <div className="w-full flex items-center justify-between mb-5">
+                            <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
+                            <div>{topic.icon}</div>
+                        </div>
+                        <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
+                        <Link href={topic.path} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             oku
-                        </motion.div>
-                    </Link>
+                        </Link>
+                    </motion.div>
                 ))}
-            </div>
+            </div>d
         </div>
     );
 }
