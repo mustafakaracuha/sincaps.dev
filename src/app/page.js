@@ -22,11 +22,17 @@ function Page() {
     ];
 
     const toolTopics = [
-        { link: "deprem", title: "Deprem", description: "Deprem anında nasıl hareket etmeniz gerektiği hakkında", icon: <RiEarthquakeFill className="text-fuchsia-500 text-[19px]" />, link: "/earthquake" },
+        {
+            link: "deprem",
+            title: "Deprem",
+            description: "Deprem anında nasıl hareket etmeniz gerektiği hakkında",
+            icon: <RiEarthquakeFill className="text-fuchsia-500 text-[19px]" />,
+            link: "/earthquake",
+        },
         { link: "sondepremler", title: "Son Depremler", description: "En yakın zamanda olan depremler", icon: <WiEarthquake className="text-indigo-500 text-[22px]" />, link: "/lastearthquake" },
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, link: "/trafficfine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, link: "/trafficrules" },
-        { link: "acilnumaralar", title: "Acil Numaralar", description: "Acil durum numaraları", icon: <FaAmbulance className="text-lime-600 text-[19px]" />, link: "/emergencynumbers"  },
+        { link: "acilnumaralar", title: "Acil Numaralar", description: "Acil durum numaraları", icon: <FaAmbulance className="text-lime-600 text-[19px]" />, link: "/emergencynumbers" },
         { link: "renkler", title: "Renkler", description: "Renkler", icon: <IoIosColorPalette className="text-yellow-500 text-[19px]" />, link: "/colours" },
     ];
 
@@ -44,10 +50,11 @@ function Page() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
-                className="max-sm:text-sm md:text-sm lg:text-md xl:text-[15px] font-normal text-gray-500 mb-10"
+                className="max-sm:text-sm md:text-sm lg:text-md xl:text-[14px] border-l-4 border-yellow-500 bg-yellow-50 p-3 font-normal text-gray-500 mb-8 mt-3"
             >
-                <strong className="text-indigo-600">Sincap.dev</strong>, kullanıcıların gündemden teknolojiye, ekonomiden spora kadar geniş bir yelpazede haberleri takip edebileceği bir platformdur.
-                Kullanıcıları en son gelişmelerle buluşturmak ve farklı alanlarda kaynaklar sunarak bilgi edinimlerini kolaylaştırmaktır.
+                <strong className="text-indigo-600">Sincap.dev</strong>, platform, doğru ve güvenilir kaynaklar sunarak toplumu bilgilendirir, güncel haberler ve analizlerle kullanıcıların gelişen
+                olaylara dair farkındalığını artırır. Eğitim, sağlık, çevre gibi toplumu ilgilendiren önemli konularda da içerikler sunarak, kullanıcılarının sosyal sorumluluklarını destekler ve
+                bilinçli bireyler yetişmesine katkıda bulunur.
             </motion.p>
 
             <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }} className="text-lg font-semibold text-gray-600 mb-6">
