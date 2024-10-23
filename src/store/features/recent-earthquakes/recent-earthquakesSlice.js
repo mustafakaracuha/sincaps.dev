@@ -1,15 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import axios from "axios";
-import * as cheerio from "cheerio";
 
-export const fetchLastEarthquake = createAsyncThunk("earthquake/fetchEarthquake", async () => {
+export const fetchLastEarthquake = createAsyncThunk("earthquake/fetchRecentEarthquake", async () => {
     const response = await axios.get("https://api.orhanaydogdu.com.tr/deprem/kandilli/live");
 
     return response.data.result;
 });
-const lastEarthquakeSlice = createSlice({
-    name: "lastEarthquake",
+const recentEarthquakes = createSlice({
+    name: "recentEarthquakes",
     initialState: {
         lastEarthquakeInfo: [],
         loading: false,
@@ -33,4 +32,4 @@ const lastEarthquakeSlice = createSlice({
     },
 });
 
-export default lastEarthquakeSlice.reducer;
+export default recentEarthquakes.reducer;

@@ -8,10 +8,10 @@ import { FiRefreshCw } from "react-icons/fi";
 import { WiEarthquake } from "react-icons/wi";
 import { LuSquirrel } from "react-icons/lu";
 
-import { fetchLastEarthquake } from "../../store/features/lastearthquake/lastEarthquakeSlice";
+import { fetchLastEarthquake } from "../../store/features/recent-earthquakes/recent-earthquakesSlice";
 
 function Page() {
-    const { lastEarthquakeInfo, loading, error } = useSelector((state) => state.lastEarthquake);
+    const { lastEarthquakeInfo, loading, error } = useSelector((state) => state.recentEarthquakes);
     const [selectedFilter, setSelectedFilter] = useState("all");
 
     const dispatch = useDispatch();
