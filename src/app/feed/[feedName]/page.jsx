@@ -73,7 +73,7 @@ const FeedPage = ({ params }) => {
                 </>
             )}
 
-            <div className="grid max-sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10">
+            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10">
                 {newsArticles.length > 0 &&
                     newsArticles.map((article, index) => (
                         <motion.a
