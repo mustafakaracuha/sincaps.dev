@@ -94,12 +94,15 @@ function PharmaciesOncallPage() {
                               key={index}
                               className="bp-4 border-b border-gray-100 flex max-sm:flex-col justify-between max-sm:items-start items-center bg-white"
                           >
-                              <div>
-                                  <h3 className="text-[15px] max-sm:text-[14px] font-semibold text-gray-600 mb-2">{pharmacy.title}</h3>
-                                  <p className="text-[13px] max-sm:text-[12px] text-gray-400">{pharmacy.address}</p>
+                              <div className="flex items-center max-sm:items-start gap-3">
+                                  <span className="text-3xl rounded-md max-sm:text-lg bg-red-500 px-2 py-1 text-white font-bold">E</span>
+                                  <div>
+                                      <h3 className="text-[15px] max-sm:text-[14px] font-semibold text-gray-600 mb-2">{pharmacy.title}</h3>
+                                      <p className="text-[12px] max-sm:text-[12px] text-gray-400">{pharmacy.address}</p>
+                                  </div>
                               </div>
-                              <div className="flex items-center gap-4 mt-4 mb-4">
-                                  <a href={`tel:${pharmacy.phone}`} className="flex p-2 text-xs max-sm:text-[10px] font-semibold rounded-md bg-amber-400 text-white items-center">
+                              <div className="flex items-center max-sm:justify-end max-sm:w-full gap-4 mt-6 mb-4">
+                                  <a href={`tel:${pharmacy.phone}`} className="flex p-2 text-xs max-sm:text-[10px] font-semibold rounded-md bg-gray-400 text-white items-center">
                                       <FaPhoneAlt className="mr-1" /> {pharmacy.phone}
                                   </a>
                                   <a
