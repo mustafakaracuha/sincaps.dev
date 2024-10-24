@@ -61,7 +61,7 @@ function Page() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
-                className="text-[17px] max-sm:text-[14px] font-semibold text-gray-600 mb-6"
+                className="text-[16px] max-sm:text-[14px] font-semibold text-gray-600 mt-3 mb-6"
             >
                 Bilgilendirme
             </motion.h2>
@@ -89,7 +89,7 @@ function Page() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
-                className="text-[17px] max-sm:text-[14px] font-semibold text-gray-600 mt-12 mb-6"
+                className="text-[16px] max-sm:text-[14px] font-semibold text-gray-600 mt-12 mb-6"
             >
                 Haberler
             </motion.h2>
