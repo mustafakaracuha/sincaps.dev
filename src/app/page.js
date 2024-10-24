@@ -75,7 +75,7 @@ function Page() {
                         transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
                         <div className="w-full flex items-center justify-between mb-5">
-                            <h3 className="text-sm max-sm:text-[13px] font-semibold text-gray-600">{topic.title}</h3>
+                            <h3 className="text-[13px] max-sm:text-[13px] font-semibold text-gray-600">{topic.title}</h3>
                             <div>{topic.icon}</div>
                         </div>
                         <p className="text-gray-400 max-sm:text-[12px] text-[13px] mt-2 mb-4">{topic.description}</p>
@@ -102,8 +102,8 @@ function Page() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.2 }}
                     >
-                        <div className="w-full flex items-center justify-between mb-4">
-                            <h3 className="text-sm max-sm:text-[13px] font-semibold text-gray-600">{topic.title}</h3>
+                        <div className="w-full flex items-center justify-between mb-5">
+                            <h3 className="text-[13px] max-sm:text-[13px] font-semibold text-gray-600">{topic.title}</h3>
                             <div>{topic.icon}</div>
                         </div>
                         <p className="text-gray-400 max-sm:text-[12px] text-[13px] mt-2 mb-4">{topic.description}</p>
