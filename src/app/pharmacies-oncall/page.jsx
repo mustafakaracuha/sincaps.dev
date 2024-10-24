@@ -58,9 +58,9 @@ function PharmaciesOncallPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="w-full flex max-sm:flex-col items-center max-sm:items-start justify-between gap-4 mb-6"
+                className="w-full flex max-sm:flex-col items-center max-sm:items-start justify-between gap-4 mb-6 max-sm:mb-10"
             >
-                <h1 className="w-full text-xl max-sm:text-[17px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start capitalize">
+                <h1 className="w-full text-xl max-sm:text-[17px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start capitalize max-sm:mb-4">
                     {selectedCity.toLowerCase() + " " + selectedDistrict.toLowerCase()} Eczaneler
                 </h1>
 
