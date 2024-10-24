@@ -54,9 +54,9 @@ function Page() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.3 }}
-                        className="p-4 border-b border-gray-100 flex justify-between items-center bg-white"
+                        className="border-b py-4 max-sm:px-5 border-gray-100 flex justify-between items-center bg-white"
                     >
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-4">
                             <WiEarthquake size={30} className="text-red-400" />
                             <div>
                                 <h2 className="text-sm max-sm:text-[12px] font-semibold text-gray-800 mb-1">{quake.title}</h2>
