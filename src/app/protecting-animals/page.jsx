@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPaw, FaTree, FaHeart, FaHands, FaDog, FaCat, FaDove, FaHandsHelping, FaLeaf } from "react-icons/fa";
+import { BiSolidDonateHeart } from "react-icons/bi";
 
 function AnimalProtectionPage() {
     const animalProtectionTopics = [
@@ -86,7 +87,12 @@ function AnimalProtectionPage() {
     return (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full overflow-auto pb-24 px-10 max-sm:px-5 py-8">
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">Hayvanları Korumak</h1>
-            <div className="grid grid-cols-1 max-sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 mb-6">
+            <p className="text-gray-500 text-[15px] max-sm:text-[14px] flex items-center gap-2">
+                Minik dostlarımızın hayatına dokunmak, onların daha iyi bir yaşam sürmesine yardımcı olmak elimizde. Sokak hayvanları, yardıma en çok muhtaç olan canlılardan biri ve bizler onlara
+                gerekli desteği sağladığımızda hem daha sağlıklı hem de daha güvenli bir ortamda yaşamalarını sağlayabiliriz.
+            </p>
+
+            <div className="grid grid-cols-1 max-sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 mb-6">
                 {donationSites.map((site, index) => (
                     <a href={site.url} target="_blank" key={index} className={`p-4 rounded-lg flex items-center transition-shadow duration-300 ${site.color}`}>
                         <div className="flex items-center">
