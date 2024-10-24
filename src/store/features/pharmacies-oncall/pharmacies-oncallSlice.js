@@ -4,10 +4,7 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 
 export const fetchPharmaciesOncall = createAsyncThunk("pharmacy/pharmaciesOncall", async ({ selectedCity, selectedDistrict }) => {
-
-    const url = selectedDistrict 
-    ? `https://sivasmemleket.com.tr/${selectedCity}-${selectedDistrict}-nobetci-eczaneler`
-    : `https://sivasmemleket.com.tr/${selectedCity}-nobetci-eczaneler`;
+    const url = selectedDistrict ? `https://sivasmemleket.com.tr/${selectedCity}-${selectedDistrict}-nobetci-eczaneler` : `https://sivasmemleket.com.tr/${selectedCity}-nobetci-eczaneler`;
 
     const response = await axios.get(url);
 
@@ -21,16 +18,26 @@ export const fetchPharmaciesOncall = createAsyncThunk("pharmacy/pharmaciesOncall
     const districts = [];
 
     $(".local-city select option").each((index, element) => {
-        const city = $(element).text().trim();
-        if (city) {
-            cities.push(city);
+        const cityText = $(element).text().trim();
+        const cityValue = $(element).val();
+
+        if (cityText) {
+            cities.push({
+                text: cityText,
+                value: cityValue,
+            });
         }
     });
 
     $(".local-district select option").each((index, element) => {
-        const district = $(element).text().trim();
-        if (district) {
-            districts.push(district);
+        const districtText = $(element).text().trim();
+        const districtValue = $(element).val();
+
+        if (districtText) {
+            districts.push({
+                text: districtText,
+                value: districtValue,
+            });
         }
     });
 

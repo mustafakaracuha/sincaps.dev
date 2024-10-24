@@ -77,7 +77,7 @@ function Page() {
                     >
                         <div className="w-full flex items-center justify-between mb-5">
                             <h3 className="text-[13px] max-sm:text-[15px] font-semibold text-gray-600">{topic.title}</h3>
-                            <div className="text-[17px] max-sm:text-[23px]">{topic.icon}</div>
+                            <div className="text-[17px] max-sm:text-[22px]">{topic.icon}</div>
                         </div>
                         <p className="text-gray-400 max-sm:text-[14px] text-[13px] mt-2 mb-4">{topic.description}</p>
                         <Link href={topic.path} className="text-indigo-500 text-[13px] font-semibold hover:underline">
@@ -105,7 +105,7 @@ function Page() {
                     >
                         <div className="w-full flex items-center justify-between mb-5">
                             <h3 className="text-[13px] max-sm:text-[15px] font-semibold text-gray-600">{topic.title}</h3>
-                            <div className="text-[17px] max-sm:text-[23px]">{topic.icon}</div>
+                            <div className="text-[17px] max-sm:text-[22px]">{topic.icon}</div>
                         </div>
                         <p className="text-gray-400 max-sm:text-[14px] text-[13px] mt-2 mb-4">{topic.description}</p>
                         <Link href={`/feed/${topic.link}`} className="text-indigo-500 text-[13px] font-semibold hover:underline">
