@@ -44,7 +44,7 @@ const FeedPage = ({ params }) => {
         <div className="w-full h-screen py-8 pb-20 px-10 max-sm:px-5 overflow-auto custom-scrollbar-page">
             {newsArticles.length > 0 && (
                 <>
-                    <h1 className="text-xl max-sm:text-[14px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
+                    <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-6">
                         {feedName === "dini-bilgiler" ? "Dini Bilgiler" : `${feedName.charAt(0).toUpperCase() + feedName.slice(1)} Haberler`}
                         <span>
                             {feedName.charAt(0).toUpperCase() + feedName.slice(1) === "Spor" && (
@@ -89,8 +89,8 @@ const FeedPage = ({ params }) => {
                                 {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-32 max-sm:h-32 object-cover rounded-lg" />}
                                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
                             </div>
-                            <div className="py-8 px-6">
-                                <h4 className="text-md  max-sm:text-[13px] font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
+                            <div className="py-4 px-5">
+                                <h4 className="text-md max-sm:text-[18px] font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
                             </div>
                         </motion.a>
                     ))}
