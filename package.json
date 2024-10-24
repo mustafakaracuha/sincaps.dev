@@ -17,6 +17,7 @@
     "cheerio": "^1.0.0",
     "framer-motion": "^11.11.9",
     "next": "14.2.15",
+    "nextjs-google-adsense": "^1.0.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
