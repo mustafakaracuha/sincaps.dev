@@ -111,7 +111,7 @@ function PharmaciesOncallPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.3 }}
                         key={index}
-                        className="bp-4 border-b border-gray-100 flex-col justify-between items-center bg-white"
+                        className="bp-4 border-b border-gray-100 flex max-sm:flex-col justify-between max-sm:items-start items-center bg-white"
                     >
                         <div>
                             <h3 className="text-sm max-sm:text-[14px] font-semibold text-gray-800 mb-2">{pharmacy.title}</h3>
