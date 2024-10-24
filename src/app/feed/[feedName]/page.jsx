@@ -79,6 +79,7 @@ const FeedPage = ({ params }) => {
                         <motion.a
                             key={index}
                             href={article.link}
+                            title={article.title}
                             target="_blank"
                             className="group h-[15rem] block bg-white max-sm:shadow-none max-sm:border shadow-md shadow-gray-200 rounded-lg overflow-hidden"
                             initial={{ opacity: 0, y: 20 }}
@@ -86,11 +87,13 @@ const FeedPage = ({ params }) => {
                             transition={{ duration: 0.3, delay: index * 0.1 }}
                         >
                             <div className="relative">
-                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-32 max-sm:h-32 object-cover rounded-lg" />}
+                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-40 max-sm:h-40 object-cover rounded-lg" />}
                                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
                             </div>
-                            <div className="py-4 px-5">
-                                <h4 className="text-md max-sm:text-[18px] font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{article.title}</h4>
+                            <div className="mt-4 max-sm:mt-4 px-5" title={article.title}>
+                                <h4 className="text-md max-sm:text-[16px] text-ellipsis whitespace-nowrap overflow-hidden font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">
+                                    {article.title}
+                                </h4>
                             </div>
                         </motion.a>
                     ))}
