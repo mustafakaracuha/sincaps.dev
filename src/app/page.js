@@ -52,7 +52,7 @@ function Page() {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="max-sm:text-sm md:text-sm lg:text-md xl:text-[14px] border-l-4 border-yellow-500 bg-yellow-50 p-4 font-normal text-gray-400 mb-8 mt-3"
             >
-                <strong className="text-indigo-600">Sincap.dev</strong>, doğru ve güvenilir kaynaklar sunarak toplumu bilgilendirir, güncel haberler ve analizlerle kullanıcıların gelişen olaylara dair
+                Doğru ve güvenilir kaynaklar sunarak toplumu bilgilendirir, güncel haberler ve analizlerle kullanıcıların gelişen olaylara dair
                 farkındalığını artırır. Eğitim, sağlık, çevre gibi toplumu ilgilendiren önemli konularda da içerikler sunarak, kullanıcılarının sosyal sorumluluklarını destekler ve bilinçli bireyler
                 yetişmesine katkıda bulunur.
             </motion.p>
