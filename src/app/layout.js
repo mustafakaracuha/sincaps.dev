@@ -1,5 +1,3 @@
-import { GoogleAdSense } from "nextjs-google-adsense";
-
 import { Providers } from "../store/providers";
 import { store } from "../store/store";
 
@@ -37,7 +35,7 @@ export default function RootLayout({ children }) {
                     </div>
                 </Providers>
                 <Toaster />
-                <GoogleAdSense publisherId={process.env.NEXT_GOOGLE_ID} />
+                <GoogleAdsense pId={process.env.NEXT_GOOGLE_ID} />
             </body>
         </html>
     );
