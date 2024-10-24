@@ -60,37 +60,8 @@ function Page() {
             <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                className="text-lg max-sm:text-[14px] font-semibold text-gray-600 mb-6"
-            >
-                Haberler
-            </motion.h2>
-            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
-                {newsTopics.map((topic, index) => (
-                    <motion.div
-                        key={index}
-                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
-                        <div className="w-full flex items-center justify-between mb-4">
-                            <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
-                            <div>{topic.icon}</div>
-                        </div>
-                        <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
-                        <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
-                            incele
-                        </Link>
-                    </motion.div>
-                ))}
-            </div>
-
-            <motion.h2
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.5 }}
-                className="text-lg max-sm:text-[14px] font-semibold text-gray-600 mt-12 mb-6"
+                className="text-[17px] max-sm:text-[14px] font-semibold text-gray-600 mb-6"
             >
                 Bilgilendirme
             </motion.h2>
@@ -110,6 +81,34 @@ function Page() {
                         <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
                         <Link href={topic.path} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             oku
+                        </Link>
+                    </motion.div>
+                ))}
+            </div>
+            <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                className="text-[17px] max-sm:text-[14px] font-semibold text-gray-600 mt-12 mb-6"
+            >
+                Haberler
+            </motion.h2>
+            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
+                {newsTopics.map((topic, index) => (
+                    <motion.div
+                        key={index}
+                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                        <div className="w-full flex items-center justify-between mb-4">
+                            <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
+                            <div>{topic.icon}</div>
+                        </div>
+                        <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
+                        <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
+                            incele
                         </Link>
                     </motion.div>
                 ))}
