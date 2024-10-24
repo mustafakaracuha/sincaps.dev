@@ -2,9 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-
 import { motion } from "framer-motion";
-
 import { LuSquirrel } from "react-icons/lu";
 import { MdOutlineRssFeed } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
@@ -14,7 +12,7 @@ const NavBar = () => {
     const menuRef = useRef(null);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen((prev) => !prev);
     };
 
     const closeMenu = () => {
@@ -23,7 +21,7 @@ const NavBar = () => {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            if (menuRef.current && isMenuOpen && !menuRef.current.contains(event.target)) {
                 closeMenu();
             }
         };
@@ -32,11 +30,11 @@ const NavBar = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, []);
+    }, [isMenuOpen]);
 
     return (
         <nav className="bg-white border-b border-gray-200 py-4">
-            <div className="flex justify-between items-center px-16">
+            <div className="flex justify-between items-center px-10">
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="text-xl font-bold text-gray-800 flex items-center space-x-2">
                     <Link href="/" className="flex items-center gap-2">
                         <LuSquirrel className="text-indigo-600" size={30} />
