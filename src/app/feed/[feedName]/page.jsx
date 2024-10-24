@@ -86,7 +86,7 @@ const FeedPage = ({ params }) => {
                             transition={{ duration: 0.3, delay: index * 0.1 }}
                         >
                             <div className="relative">
-                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-48 max-sm:h-32 object-cover rounded-lg" />}
+                                {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-32 max-sm:h-32 object-cover rounded-lg" />}
                                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
                             </div>
                             <div className="py-8 px-6">
