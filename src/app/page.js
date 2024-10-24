@@ -78,7 +78,7 @@ function Page() {
                             <h3 className="text-sm max-sm:text-[13px] font-semibold text-gray-600">{topic.title}</h3>
                             <div>{topic.icon}</div>
                         </div>
-                        <p className="text-gray-400 max-sm:text-[12px] text-[12px] mt-2 mb-4">{topic.description}</p>
+                        <p className="text-gray-400 max-sm:text-[12px] text-[13px] mt-2 mb-4">{topic.description}</p>
                         <Link href={topic.path} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             oku
                         </Link>
@@ -106,7 +106,7 @@ function Page() {
                             <h3 className="text-sm max-sm:text-[13px] font-semibold text-gray-600">{topic.title}</h3>
                             <div>{topic.icon}</div>
                         </div>
-                        <p className="text-gray-400 max-sm:text-[12px] text-[12px] mt-2 mb-4">{topic.description}</p>
+                        <p className="text-gray-400 max-sm:text-[12px] text-[13px] mt-2 mb-4">{topic.description}</p>
                         <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             incele
                         </Link>
