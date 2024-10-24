@@ -84,7 +84,7 @@ function AnimalProtectionPage() {
     ];
 
     return (
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="max-w-3xl container mx-auto h-full overflow-auto pb-24 px-10 max-sm:px-5 py-8">
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full overflow-auto pb-24 px-10 max-sm:px-5 py-8">
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">Hayvanları Korumak</h1>
             <ul className="space-y-3">
                 {animalProtectionTopics.map((topic, index) => (
