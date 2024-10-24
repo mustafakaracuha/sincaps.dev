@@ -100,7 +100,7 @@ function Page() {
                         className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.4 }}
+                        transition={{ duration: 0.3, delay: index * 0.2 }}
                     >
                         <div className="w-full flex items-center justify-between mb-4">
                             <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
