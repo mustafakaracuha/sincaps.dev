@@ -37,7 +37,7 @@ function Page() {
     ];
 
     return (
-        <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">
+        <div className="w-full h-screen pb-24 flex flex-col items-start justify-start bg-white max-sm:px-5 px-10 pt-8 overflow-auto custom-scrollbar-page">
             <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
