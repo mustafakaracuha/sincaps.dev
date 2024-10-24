@@ -54,37 +54,33 @@ function PharmaciesOncallPage() {
 
     return (
         <div className="w-full h-full pb-24 bg-white px-10 max-sm:px-5 pt-8 overflow-auto custom-scrollbar-page">
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="flex items-center justify-between gap-4 mb-6">
-                <h1 className="text-xl max-sm:text-[14px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start capitalize">
+            <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-full flex max-sm:flex-col items-center max-sm:items-start justify-between gap-4 mb-6"
+            >
+                <h1 className="w-full text-xl max-sm:text-[17px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start capitalize">
                     {selectedCity.toLowerCase() + " " + selectedDistrict.toLowerCase()} Eczaneler
                 </h1>
 
-                <div className="flex items-center gap-4">
-                    <div className="relative">
-                        <select value={selectedCity} onChange={handleCityChange} className="border max-sm:border-0 w-28 text-sm outline-none border-gray-300 rounded-md p-2">
-                            {pharmaciesOncallList.cities?.map((city, index) => (
-                                <option key={index} value={city.value}>
-                                    {city.text}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                <div className="w-full flex items-center justify-end gap-4">
+                    <select value={selectedCity} onChange={handleCityChange} className="border max-sm:w-full text-sm outline-none border-gray-300 rounded-md p-2">
+                        {pharmaciesOncallList.cities?.map((city, index) => (
+                            <option key={index} value={city.value}>
+                                {city.text}
+                            </option>
+                        ))}
+                    </select>
 
-                    <div className="relative">
-                        <select
-                            value={selectedDistrict}
-                            onChange={handleDistrictChange}
-                            className="border max-sm:border-0 outline-none text-sm border-gray-300 rounded-md p-2"
-                            disabled={!selectedCity}
-                        >
-                            <option value="">İlçe Seçin</option>
-                            {pharmaciesOncallList.districts?.map((district, index) => (
-                                <option key={index} value={district.value}>
-                                    {district.text}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                    <select value={selectedDistrict} onChange={handleDistrictChange} className="border outline-none max-sm:w-full text-sm border-gray-300 rounded-md p-2" disabled={!selectedCity}>
+                        <option value="">İlçe Seçin</option>
+                        {pharmaciesOncallList.districts?.map((district, index) => (
+                            <option key={index} value={district.value}>
+                                {district.text}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </motion.div>
 
@@ -99,8 +95,8 @@ function PharmaciesOncallPage() {
                               className="bp-4 border-b border-gray-100 flex max-sm:flex-col justify-between max-sm:items-start items-center bg-white"
                           >
                               <div>
-                                  <h3 className="text-sm max-sm:text-[14px] font-semibold text-gray-600 mb-2">{pharmacy.title}</h3>
-                                  <p className="text-xs max-sm:text-[12px] text-gray-500">{pharmacy.address}</p>
+                                  <h3 className="text-[15px] max-sm:text-[14px] font-semibold text-gray-600 mb-2">{pharmacy.title}</h3>
+                                  <p className="text-[13px] max-sm:text-[12px] text-gray-400">{pharmacy.address}</p>
                               </div>
                               <div className="flex items-center gap-4 mt-4 mb-4">
                                   <a href={`tel:${pharmacy.phone}`} className="flex p-2 text-xs max-sm:text-[10px] font-semibold rounded-md bg-amber-400 text-white items-center">
