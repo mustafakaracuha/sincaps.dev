@@ -14,20 +14,45 @@ function PharmaciesOncallPage() {
 
     const { pharmaciesOncallList, loading, error } = useSelector((state) => state.pharmaciesOncall);
 
-    const [selectedCity, setSelectedCity] = useState("sivas"); // Varsayılan şehir
-    const [selectedDistrict, setSelectedDistrict] = useState(""); // İlçe seçimi
+    const [selectedCity, setSelectedCity] = useState("sivas");
+    const [selectedDistrict, setSelectedDistrict] = useState("merkez");
 
     useEffect(() => {
-        dispatch(fetchPharmaciesOncall(selectedCity));
+        dispatch(fetchPharmaciesOncall({ selectedCity, selectedDistrict }));
     }, [selectedCity, selectedDistrict]);
 
+    const normalizeString = (str) => {
+        const turkishChars = {
+            ç: "c",
+            Ç: "c",
+            ğ: "g",
+            Ğ: "g",
+            ı: "i",
+            İ: "i",
+            ö: "o",
+            Ö: "o",
+            ş: "s",
+            Ş: "s",
+            ü: "u",
+            Ü: "u",
+        };
+
+        return str
+            .split("")
+            .map((char) => turkishChars[char] || char)
+            .join("")
+            .toLowerCase();
+    };
+
     const handleCityChange = (e) => {
-        setSelectedCity(e.target.value);
-        setSelectedDistrict(""); // Şehir değiştiğinde ilçe temizlenir
+        const selectedCity = e.target.value;
+        setSelectedCity(normalizeString(selectedCity));
+        setSelectedDistrict("");
     };
 
     const handleDistrictChange = (e) => {
-        setSelectedDistrict(e.target.value);
+        const selectedDistrict = e.target.value;
+        setSelectedDistrict(normalizeString(selectedDistrict));
     };
 
     if (loading) {
@@ -57,26 +82,30 @@ function PharmaciesOncallPage() {
 
                 <div className="flex items-center gap-4">
                     <div className="relative">
-                        <select value={selectedCity} onChange={handleCityChange} className="border text-sm outline-none border-gray-300 rounded-md p-2">
-                            <option value="sivas">Sivas</option>
-                            <option value="ankara">Ankara</option>
-                            <option value="istanbul">İstanbul</option>
+                        <select value={selectedCity} onChange={handleCityChange} className="border w-28 text-sm outline-none border-gray-300 rounded-md p-2">
+                            {pharmaciesOncallList.cities?.map((city, index) => (
+                                <option key={index} value={city.toLowerCase()}>
+                                    {city}
+                                </option>
+                            ))}
                         </select>
                     </div>
 
                     <div className="relative">
-                        <select value={selectedDistrict} onChange={handleDistrictChange} className="border outline-none text-sm border-gray-300 rounded-md p-2">
+                        <select value={selectedDistrict} onChange={handleDistrictChange} className="border outline-none text-sm border-gray-300 rounded-md p-2" disabled={!selectedCity}>
                             <option value="">İlçe Seçin</option>
-                            <option value="merkez">Merkez</option>
-                            <option value="yildizeli">Yıldızeli</option>
+                            {pharmaciesOncallList.districts?.map((district, index) => (
+                                <option key={index} value={district.toLowerCase()}>
+                                    {district}
+                                </option>
+                            ))}
                         </select>
                     </div>
                 </div>
             </motion.div>
 
-            {/* Nöbetçi Eczaneler Listesi */}
             <ul className="space-y-6">
-                {pharmaciesOncallList.map((pharmacy, index) => (
+                {pharmaciesOncallList?.pharmacies?.map((pharmacy, index) => (
                     <motion.li
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

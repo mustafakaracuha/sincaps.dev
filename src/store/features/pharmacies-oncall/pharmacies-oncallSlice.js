@@ -3,8 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-export const fetchPharmaciesOncall = createAsyncThunk("pharmacy/pharmaciesOncall", async (selectedCity) => {
-    const response = await axios.get(`https://sivasmemleket.com.tr/${selectedCity}-nobetci-eczaneler`);
+export const fetchPharmaciesOncall = createAsyncThunk("pharmacy/pharmaciesOncall", async ({ selectedCity, selectedDistrict }) => {
+    const response = await axios.get(`https://sivasmemleket.com.tr/${selectedCity}-${selectedDistrict}-nobetci-eczaneler`);
 
     const html = response.data;
 
@@ -12,17 +12,34 @@ export const fetchPharmaciesOncall = createAsyncThunk("pharmacy/pharmaciesOncall
 
     const pharmacies = [];
 
+    const cities = [];
+    const districts = [];
+
+    $(".local-city select option").each((index, element) => {
+        const city = $(element).text().trim();
+        if (city) {
+            cities.push(city);
+        }
+    });
+
+    $(".local-district select option").each((index, element) => {
+        const district = $(element).text().trim();
+        if (district) {
+            districts.push(district);
+        }
+    });
+
     $(".pharmacies-list ul li").each((index, element) => {
-        const title = $(element).find("h3").text().trim(); 
+        const title = $(element).find("h3").text().trim();
         const address = $(element).find("address").text().trim();
 
-        const phone = $(element).find("a[href^='tel:']").attr("href")?.replace("tel:", "").trim(); // Telefon numarası
-        const directions = $(element).find("a[href^='https://www.google.com/']").attr("href"); // Yol tarifi için link
+        const phone = $(element).find("a[href^='tel:']").attr("href")?.replace("tel:", "").trim();
+        const directions = $(element).find("a[href^='https://www.google.com/']").attr("href");
 
         pharmacies.push({ title, address, phone, directions });
     });
 
-    return pharmacies;
+    return { cities, districts, pharmacies };
 });
 
 const pharmaciesOncallSlice = createSlice({
