@@ -61,7 +61,7 @@ function PharmaciesOncallPage() {
 
                 <div className="flex items-center gap-4">
                     <div className="relative">
-                        <select value={selectedCity} onChange={handleCityChange} className="border-0 w-28 text-sm outline-none border-gray-300 rounded-md p-2">
+                        <select value={selectedCity} onChange={handleCityChange} className="border max-sm:border-0 w-28 text-sm outline-none border-gray-300 rounded-md p-2">
                             {pharmaciesOncallList.cities?.map((city, index) => (
                                 <option key={index} value={city.value}>
                                     {city.text}
@@ -71,7 +71,12 @@ function PharmaciesOncallPage() {
                     </div>
 
                     <div className="relative">
-                        <select value={selectedDistrict} onChange={handleDistrictChange} className="border-0 outline-none text-sm border-gray-300 rounded-md p-2" disabled={!selectedCity}>
+                        <select
+                            value={selectedDistrict}
+                            onChange={handleDistrictChange}
+                            className="border max-sm:border-0 outline-none text-sm border-gray-300 rounded-md p-2"
+                            disabled={!selectedCity}
+                        >
                             <option value="">İlçe Seçin</option>
                             {pharmaciesOncallList.districts?.map((district, index) => (
                                 <option key={index} value={district.value}>
@@ -113,7 +118,7 @@ function PharmaciesOncallPage() {
                           </motion.li>
                       ))
                     : loading === false &&
-                      pharmaciesOncallList.pharmacies.length === 0 && (
+                      pharmaciesOncallList?.pharmacies?.length === 0 && (
                           <li className="text-center bg-yellow-50 px-4 text-sm max-sm:text-[14px] text-yellow-600 rounded-md font-semibold py-4 flex items-center justify-center">
                               <FaExclamationTriangle className="mr-2 text-yellow-600 text-md" /> Bu bölgede eczane bulunamadı.
                           </li>
