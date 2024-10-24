@@ -103,7 +103,7 @@ function PharmaciesOncallPage() {
                               </div>
                               <div className="flex items-center max-sm:justify-end max-sm:w-full gap-4 mt-6 mb-4">
                                   <a href={`tel:${pharmacy.phone}`} className="flex p-2 text-xs max-sm:text-[10px] font-semibold rounded-md bg-gray-400 text-white items-center">
-                                      <FaPhoneAlt className="mr-1" /> {pharmacy.phone}
+                                      <FaPhoneAlt className="mr-1" /> Ara
                                   </a>
                                   <a
                                       href={pharmacy.directions}
