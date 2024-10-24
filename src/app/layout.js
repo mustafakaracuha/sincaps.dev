@@ -3,6 +3,7 @@ import { store } from "../store/store";
 
 import NavBar from "./components/NavBar";
 import SidebarMenu from "./components/SideBar";
+import GoogleAdsense from "../../GoogleAdsense";
 import "./globals.css";
 
 import { Toaster } from "react-hot-toast";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
                     </div>
                 </Providers>
                 <Toaster />
+                <GoogleAdsense pId={process.env.NEXT_GOOGLE_ID} />
             </body>
         </html>
     );
