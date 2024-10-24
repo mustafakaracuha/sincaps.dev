@@ -34,7 +34,7 @@ function HoroscopePage() {
     }, [dispatch, selectedHoroscope]);
 
     return (
-        <div className={`flex w-full h-full overflow-auto pb-24 px-10 py-8 ${selectedHoroscope ? "flex-row" : "flex-col"}`}>
+        <div className={`flex w-full h-full overflow-auto pb-24 px-10 max-sm:px-5 py-8 ${selectedHoroscope ? "flex-row" : "flex-col"}`}>
             <div className={`flex-1 ${selectedHoroscope ? "w-2/3" : "w-full"}`}>
                 <div className="mb-6">
                     <motion.h1
@@ -49,7 +49,7 @@ function HoroscopePage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 }}
-                        className="max-sm:text-xs md:text-sm lg:text-md xl:text-md text-gray-500"
+                        className="max-sm:text-[13px] md:text-sm lg:text-md xl:text-md text-gray-500"
                     >
                         Gök kubbede yer alan 12 takımyıldızına burç denir. Bir insanın doğum anında Güneş hangi takımyıldızındaysa o, kişinin burcudur. Zodyak Kuşağında gezegenlerin seyri
                         takımyıldızlarıyla ilişkilendirildiğinde anlamı ve etkisi değişir.
@@ -61,7 +61,9 @@ function HoroscopePage() {
                         <motion.div
                             key={index}
                             onClick={() => setSelectedHoroscope(horoscope)}
-                            className={`cursor-pointer p-6 flex flex-col items-center shadow-lg shadow-gray-200 rounded-2xl ${selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"}`}
+                            className={`cursor-pointer p-6 flex flex-col items-center max-sm:shadow-none max-sm:border shadow-lg shadow-gray-200 rounded-2xl ${
+                                selectedHoroscope === horoscope ? "bg-gray-50" : "bg-white"
+                            }`}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
