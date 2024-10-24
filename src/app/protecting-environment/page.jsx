@@ -48,7 +48,7 @@ function page() {
     ];
 
     return (
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full py-8 px-10 pb-20 bg-white overflow-auto">
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full py-8 px-10 max-sm:px-5 pb-20 bg-white overflow-auto">
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">Çevreyi Korumak</h1>
             <ul className="space-y-3">
                 {environmentProtectionTips.map((tip, index) => (

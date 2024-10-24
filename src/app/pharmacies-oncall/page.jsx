@@ -76,7 +76,7 @@ function PharmaciesOncallPage() {
     }
 
     return (
-        <div className="w-full h-full pb-24 bg-white px-10 pt-8 overflow-auto custom-scrollbar-page">
+        <div className="w-full h-full pb-24 bg-white px-10 max-sm:px-5 pt-8 overflow-auto custom-scrollbar-page">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="flex items-center justify-between gap-4 mb-6">
                 <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">Nöbetçi Eczaneler</h1>
 
@@ -114,14 +114,14 @@ function PharmaciesOncallPage() {
                         className="bp-4 border-b border-gray-100 flex-col justify-between items-center bg-white"
                     >
                         <div>
-                            <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-800 mb-2">{pharmacy.title}</h3>
-                            <p className="text-xs max-sm:text-[11px] text-gray-500">{pharmacy.address}</p>
+                            <h3 className="text-sm max-sm:text-[14px] font-semibold text-gray-800 mb-2">{pharmacy.title}</h3>
+                            <p className="text-xs max-sm:text-[12px] text-gray-500">{pharmacy.address}</p>
                         </div>
                         <div className="flex items-center gap-4 mt-4 mb-4">
-                            <a href={`tel:${pharmacy.phone}`} className="flex p-2 text-xs font-semibold rounded-md bg-amber-400 text-white items-center">
+                            <a href={`tel:${pharmacy.phone}`} className="flex p-2 text-xs max-sm:text-[10px] font-semibold rounded-md bg-amber-400 text-white items-center">
                                 <FaPhoneAlt className="mr-1" /> {pharmacy.phone}
                             </a>
-                            <a href={pharmacy.directions} target="_blank" className="flex p-2 text-xs font-semibold rounded-md bg-indigo-500 text-white items-center">
+                            <a href={pharmacy.directions} target="_blank" className="flex p-2 text-xs max-sm:text-[10px] font-semibold rounded-md bg-indigo-500 text-white items-center">
                                 <FaMapMarkerAlt className="mr-1" /> Yol Tarifi Al
                             </a>
                         </div>
