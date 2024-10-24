@@ -65,11 +65,11 @@ function Page() {
             >
                 Bilgilendirme
             </motion.h2>
-            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5  gap-8">
+            <div className="w-full grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
                 {toolTopics.map((topic, index) => (
                     <motion.div
                         key={index}
-                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
+                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 max-sm:border max-sm:shadow-none flex flex-col items-start text-start"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -78,7 +78,7 @@ function Page() {
                             <h3 className="text-sm max-sm:text-[12px] font-semibold text-gray-600">{topic.title}</h3>
                             <div>{topic.icon}</div>
                         </div>
-                        <p className="text-gray-400 max-sm:text-[11px] text-[13px] mt-2 mb-4">{topic.description}</p>
+                        <p className="text-gray-400 max-sm:text-[12px] text-[13px] mt-2 mb-4">{topic.description}</p>
                         <Link href={topic.path} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             oku
                         </Link>
@@ -93,11 +93,11 @@ function Page() {
             >
                 Haberler
             </motion.h2>
-            <div className="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
+            <div className="w-full grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-[1700px]:grid-cols-5 max-sm:gap-5 gap-8">
                 {newsTopics.map((topic, index) => (
                     <motion.div
                         key={index}
-                        className="bg-white p-6 rounded-xl shadow-lg shadow-gray-200 flex flex-col items-start text-start"
+                        className="bg-white p-6 rounded-xl shadow-lg max-sm:border max-sm:shadow-none shadow-gray-200 flex flex-col items-start text-start"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.2 }}
