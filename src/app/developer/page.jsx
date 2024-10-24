@@ -17,7 +17,7 @@ function Developer() {
     return (
         <>
             <div className="w-full flex h-full items-start justify-center overflow-hidden">
-                <div className="max-w-2xl rounded-xl flex flex-col items-center overflow-hidden p-10">
+                <div className="max-w-2xl rounded-xl flex flex-col items-center overflow-hidden p-10 max-sm:px-22">
                     {/* Developer Image */}
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
