@@ -35,13 +35,13 @@ function Page({ params }) {
     ];
 
     return (
-        <div className="px-24 py-8 w-full">
+        <div className="px-24 max-sm:px-0 py-8 max-sm:py-3 w-full h-full">
             <div className="max-w-[75rem] flex space-x-4 mb-4 px-4 py-3 rounded-lg bg-gray-100">
-                <h1 className="text-lg flex items-center justify-between gap-4 font-semibold text-indigo-600 rounded-lg bg-gray-100 text-start">Puan Durumu</h1>
-                <Link href={`/feed/${feedName}/fixtures`} className="text-lg flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">
+                <h1 className="text-lg max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-indigo-600 rounded-lg bg-gray-100 text-start">Puan Durumu</h1>
+                <Link href={`/feed/${feedName}/fixtures`} className="text-lg max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">
                     Fikstür
                 </Link>
-                <Link href={`/feed/${feedName}/topScorers`} className="text-lg flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">
+                <Link href={`/feed/${feedName}/topScorers`} className="text-lg max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">
                     Gol Krallığı
                 </Link>
             </div>
@@ -50,7 +50,7 @@ function Page({ params }) {
                     <button
                         key={league.key}
                         onClick={() => handleLeagueClick(league.key)}
-                        className={`flex-grow min-w-[5rem] max-w-[8rem] py-2 border text-center transition-all border-gray-200 rounded-lg font-semibold text-[12px] flex items-center justify-center gap-1 text-gray-500 ${
+                        className={`flex-grow max-sm:text-[12px] min-w-[5rem] max-w-[8rem] py-2 border text-center transition-all border-gray-200 rounded-lg font-semibold text-[12px] flex items-center justify-center gap-1 text-gray-500 ${
                             selectedLeague === league.key ? "transition-all bg-indigo-500 text-white" : "bg-white"
                         }`}
                     >
@@ -65,7 +65,7 @@ function Page({ params }) {
                 </div>
             ) : (
                 leagueListResult && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="w-full">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="w-full h-screen max-sm:pb-[15rem] overflow-auto">
                         <table className="w-full text-[14px] text-left">
                             <thead>
                                 <tr className="!rounded-t-xl ">

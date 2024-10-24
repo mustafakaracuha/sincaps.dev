@@ -44,15 +44,15 @@ function Page({ params }) {
     };
 
     return (
-        <div className="px-24 py-8 w-full">
+        <div className="px-24 max-sm:px-0 py-8 max-sm:py-3 w-full h-full">
             <div className="max-w-[75rem] flex space-x-4 mb-4 px-4 py-3 rounded-lg bg-gray-100">
-                <Link href={`/feed/${feedName}/standings`} className="text-lg flex items-center justify-between gap-4 font-semibold text-gray-600 rounded-lg text-start">
+                <Link href={`/feed/${feedName}/standings`} className="text-lg max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 rounded-lg text-start">
                     Puan Durumu
                 </Link>
-                <Link href={`/feed/${feedName}/fixtures`} className="text-lg flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">
+                <Link href={`/feed/${feedName}/fixtures`} className="text-lg max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start">
                     Fikstür
                 </Link>
-                <h1 className="text-lg flex items-center justify-between gap-4 font-semibold text-indigo-600 rounded-lg bg-gray-100 text-start">Gol Krallığı</h1>
+                <h1 className="text-lg max-sm:text-[15px] flex items-center justify-between gap-4 font-semibold text-indigo-600 rounded-lg bg-gray-100 text-start">Gol Krallığı</h1>
             </div>
 
             <div className="max-w-[75rem] flex space-x-4 mb-4 py-4 px-4 rounded-lg bg-gray-100 overflow-x-auto">
@@ -60,7 +60,7 @@ function Page({ params }) {
                     <button
                         key={league.key}
                         onClick={() => handleLeagueClick(league.key)}
-                        className={`flex-grow min-w-[5rem] max-w-[8rem] py-2 border text-center transition-all border-gray-200 rounded-lg font-semibold text-[12px] flex items-center justify-center gap-1 text-gray-500 ${
+                        className={`flex-grow min-w-[5rem] max-sm:text-[12px] max-w-[8rem] py-2 border text-center transition-all border-gray-200 rounded-lg font-semibold text-[12px] flex items-center justify-center gap-1 text-gray-500 ${
                             selectedLeague === league.key ? "transition-all bg-indigo-500 text-white" : "bg-white"
                         }`}
                     >
@@ -82,7 +82,7 @@ function Page({ params }) {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1, duration: 0.3 }}
-                                className="flex flex-col md:flex-row justify-between items-center bg-white shadow-md shadow-gray-200 p-4 rounded-lg"
+                                className="flex max-sm:flex md:flex-row justify-between items-start bg-white shadow-md shadow-gray-200 p-4 rounded-lg"
                             >
                                 <div className="flex items-center space-x-4">
                                     <div className="flex items-center space-x-2">
