@@ -4,7 +4,12 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 
 export const fetchPharmaciesOncall = createAsyncThunk("pharmacy/pharmaciesOncall", async ({ selectedCity, selectedDistrict }) => {
-    const response = await axios.get(`https://sivasmemleket.com.tr/${selectedCity}-${selectedDistrict}-nobetci-eczaneler`);
+
+    const url = selectedDistrict 
+    ? `https://sivasmemleket.com.tr/${selectedCity}-${selectedDistrict}-nobetci-eczaneler`
+    : `https://sivasmemleket.com.tr/${selectedCity}-nobetci-eczaneler`;
+
+    const response = await axios.get(url);
 
     const html = response.data;
 
