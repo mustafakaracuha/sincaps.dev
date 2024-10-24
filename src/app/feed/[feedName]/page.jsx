@@ -90,8 +90,8 @@ const FeedPage = ({ params }) => {
                                 {article.imageUrl && <img srcSet={article.imageUrl} alt={article.title} className="w-full h-40 max-sm:h-40 object-cover rounded-lg" />}
                                 <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent to-white"></div>
                             </div>
-                            <div className="mt-4 max-sm:mt-4 px-5" title={article.title}>
-                                <h4 className="text-md max-sm:text-[16px] text-ellipsis whitespace-nowrap overflow-hidden font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">
+                            <div className="mt-3 max-sm:mt-4 px-5" title={article.title}>
+                                <h4 className="text-md max-sm:text-[16px] font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors overflow-hidden overflow-ellipsis line-clamp-2">
                                     {article.title}
                                 </h4>
                             </div>
