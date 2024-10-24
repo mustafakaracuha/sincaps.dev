@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaAmbulance, FaPhone, FaApple, FaTree } from "react-icons/fa";
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaAmbulance, FaPhone, FaApple, FaTree, FaSpa, FaPaw } from "react-icons/fa";
 import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { WiEarthquake } from "react-icons/wi";
@@ -34,6 +34,8 @@ function Page() {
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, path: "/traffic-rules" },
         { link: "cevreyikorumak", title: "Çevreyi Korumak", description: "Çevreyi korumak hakkında", icon: <FaTree className="text-lime-600 text-[18px]" />, path: "/protecting-environment" },
+        { link: "hayvanlarikorumak", title: "Hayvanları Korumak", description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin", icon: <FaPaw className="text-teal-500 text-[15px]" />, path: "/protecting-animals" },
+        { link: "kisiselbakim", title: "Kişisel Bakım", description: "Sağlıklı ve bakımlı görünmek için öneriler ve ipuçları", icon: <FaSpa className="text-pink-400 text-[16px]" />, path: "/personal-care" },
     ];
 
     return (
