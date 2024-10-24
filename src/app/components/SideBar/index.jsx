@@ -14,7 +14,6 @@ const topics = [
     { link: "magazin", title: "Magazin", description: "Magazin dünyasından haberler." },
     { link: "saglik", title: "Sağlık", description: "Sağlık alanındaki yenilikler ve bilgiler." },
     { link: "dini-bilgiler", title: "Dini Bilgiler", description: "Dini konularda güncel bilgiler ve kaynaklar." },
-    { link: "burc", title: "Burçlar", description: "Günlük burç yorumlarınızı okuyun ve geleceğinizi öğrenin." },
 ];
 
 const SidebarMenu = () => {
@@ -40,7 +39,7 @@ const SidebarMenu = () => {
                 <AnimatePresence>
                     {(isFeedPage ? topics : topics.filter((topic) => ["guncel", "spor", "ekonomi", "magazin"].includes(topic.link))).map((topic) => (
                         <motion.li key={topic.link}>
-                            <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
+                            <Link href={`/feed/${topic.link}`} className="flex flex-col space-y-2 pt-1">
                                 <h4 className="text-[15px] font-medium">{topic.title}</h4>
                                 <p className="text-[13px] text-gray-400 leading-5">{topic.description}</p>
                             </Link>

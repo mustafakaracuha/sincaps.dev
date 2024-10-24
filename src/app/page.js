@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaStar, FaFilm, FaBook, FaCarCrash, FaAmbulance, FaPhone, FaApple, FaTree, FaSpa, FaPaw } from "react-icons/fa";
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaFilm, FaBook, FaCarCrash,FaTree, FaSpa, FaPaw } from "react-icons/fa";
 import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { WiEarthquake } from "react-icons/wi";
@@ -18,7 +18,6 @@ function Page() {
         { link: "spor", title: "Spor", description: "Spor dünyasından haberler ve etkinlikler.", icon: <FaFutbol className="text-green-500 text-lg" /> },
         { link: "dini-bilgiler", title: "Dini Bilgiler", description: "Dini konularda güncel bilgiler ve kaynaklar.", icon: <FaBook className="text-blue-500 text-lg" /> },
         { link: "magazin", title: "Magazin", description: "Magazin dünyasından haberler.", icon: <FaFilm className="text-gray-500 text-lg" /> },
-        { link: "burc", title: "Burçlar", description: "Günlük burç yorumlarınızı okuyun ve geleceğinizi öğrenin.", icon: <FaStar className="text-violet-500 text-lg" /> },
     ];
 
     const toolTopics = [
@@ -34,7 +33,7 @@ function Page() {
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500 text-xl" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400 text-[19px]" />, path: "/traffic-rules" },
         { link: "cevreyikorumak", title: "Çevreyi Korumak", description: "Çevreyi korumak hakkında", icon: <FaTree className="text-lime-600 text-[18px]" />, path: "/protecting-environment" },
-        { link: "hayvanlarikorumak", title: "Hayvanları Korumak", description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin", icon: <FaPaw className="text-teal-500 text-[15px]" />, path: "/protecting-animals" },
+        { link: "hayvanlarikorumak", title: "Minik Dostlar", description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin", icon: <FaPaw className="text-teal-500 text-[15px]" />, path: "/protecting-animals" },
         { link: "kisiselbakim", title: "Kişisel Bakım", description: "Sağlıklı ve bakımlı görünmek için öneriler ve ipuçları", icon: <FaSpa className="text-pink-400 text-[16px]" />, path: "/personal-care" },
     ];
 
@@ -109,7 +108,7 @@ function Page() {
                             <div>{topic.icon}</div>
                         </div>
                         <p className="text-gray-400 max-sm:text-[12px] text-[13px] mt-2 mb-4">{topic.description}</p>
-                        <Link href={topic.link === "burc" ? `/feed/horoscope` : `/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
+                        <Link href={`/feed/${topic.link}`} className="text-indigo-500 max-sm:text-[12px] text-[14px] font-medium hover:underline">
                             incele
                         </Link>
                     </motion.div>
