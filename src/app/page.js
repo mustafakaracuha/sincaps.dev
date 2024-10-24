@@ -33,7 +33,7 @@ function Page() {
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400" />, path: "/traffic-rules" },
         { link: "cevreyikorumak", title: "Çevreyi Korumak", description: "Çevreyi korumak hakkında", icon: <FaTree className="text-lime-600" />, path: "/protecting-environment" },
-        { link: "hayvanlarikorumak", title: "Minik Dostlar", description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin", icon: <FaPaw className="text-teal-500" />, path: "/protecting-animals" },
+        { link: "hayvanlarikorumak", title: "Minik Dostlarımız", description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin", icon: <FaPaw className="text-teal-500" />, path: "/protecting-animals" },
         { link: "kisiselbakim", title: "Kişisel Bakım", description: "Sağlıklı ve bakımlı görünmek için öneriler ve ipuçları", icon: <FaSpa className="text-pink-400" />, path: "/personal-care" },
     ];
 
