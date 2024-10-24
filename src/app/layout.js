@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <head>
                 <link rel="icon" href="/favicon.png" type="image/png" />
+                <GoogleAdsense pId={process.env.NEXT_GOOGLE_ID} />
             </head>
             <body className="overflow-hidden">
                 <Providers store={store}>
@@ -35,7 +36,6 @@ export default function RootLayout({ children }) {
                     </div>
                 </Providers>
                 <Toaster />
-                <GoogleAdsense pId={process.env.NEXT_GOOGLE_ID} />
             </body>
         </html>
     );
