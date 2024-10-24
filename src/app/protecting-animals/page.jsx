@@ -86,6 +86,16 @@ function AnimalProtectionPage() {
     return (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full overflow-auto pb-24 px-10 max-sm:px-5 py-8">
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">Hayvanları Korumak</h1>
+            <div className="grid grid-cols-1 max-sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 mb-6">
+                {donationSites.map((site, index) => (
+                    <a href={site.url} target="_blank" key={index} className={`p-4 rounded-lg flex items-center transition-shadow duration-300 ${site.color}`}>
+                        <div className="flex items-center">
+                            {site.icon}
+                            <h3 className="text-[12px] font-semibold text-white ml-2">{site.name}</h3>
+                        </div>
+                    </a>
+                ))}
+            </div>
             <ul className="space-y-3">
                 {animalProtectionTopics.map((topic, index) => (
                     <motion.li
@@ -103,16 +113,6 @@ function AnimalProtectionPage() {
                     </motion.li>
                 ))}
             </ul>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-                {donationSites.map((site, index) => (
-                    <a href={site.url} target="_blank" key={index} className={`p-4 rounded-lg transition-shadow duration-300 ${site.color}`}>
-                        <div className="flex items-center">
-                            {site.icon}
-                            <h3 className="text-[12px] font-semibold text-white ml-2">{site.name}</h3>
-                        </div>
-                    </a>
-                ))}
-            </div>
         </motion.div>
     );
 }
