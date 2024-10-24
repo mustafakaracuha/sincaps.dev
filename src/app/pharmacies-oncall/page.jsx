@@ -95,7 +95,7 @@ function PharmaciesOncallPage() {
                               className="bp-4 border-b border-gray-100 flex max-sm:flex-col justify-between max-sm:items-start items-center bg-white"
                           >
                               <div className="flex items-center max-sm:items-start gap-3">
-                                  <span className="text-3xl rounded-md max-sm:text-lg bg-red-500 px-2 py-1 text-white font-bold">E</span>
+                                  <span className="text-2xl rounded-md max-sm:text-sm bg-red-500 max-sm:px-2.5 px-2.5 py-1.5 max-sm:py-1.5 text-white font-semibold">E</span>
                                   <div>
                                       <h3 className="text-[15px] max-sm:text-[14px] font-semibold text-gray-600 mb-2">{pharmacy.title}</h3>
                                       <p className="text-[12px] max-sm:text-[12px] text-gray-400">{pharmacy.address}</p>
