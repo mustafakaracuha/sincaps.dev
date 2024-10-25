@@ -20,18 +20,18 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="icon" href="/favicon.png" type="image/png" />
             </head>
-            <body className="w-full h-screen">
-            <NavBar />
+            <body className="w-full h-screen overflow-hidden">
+                <NavBar />
                 <Providers store={store}>
-                    <div className="w-full h-screen flex items-center">
+                    <div className="w-full h-[calc(100vh-64px)] flex">
                         {/* Side Bar */}
-                        <SidebarMenu />
+                        <SidebarMenu className="h-full" />
 
                         {/* Divider */}
-                        <div className="w-[1px] h-screen bg-gray-200 rounded-full"></div>
+                        <div className="w-[1px] h-full bg-gray-200 rounded-full"></div>
 
                         {/* Content */}
-                        <div className="w-full h-full">{children}</div>
+                        <div className="w-full h-full overflow-y-scroll">{children}</div>
                     </div>
                 </Providers>
                 <Toaster />
