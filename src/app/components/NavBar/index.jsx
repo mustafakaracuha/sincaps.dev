@@ -13,6 +13,7 @@ const NavBar = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
+        console.log("Menu toggle: ", !isMenuOpen); // Açılma ve kapanma kontrolü için
     };
 
     const closeMenu = () => {
@@ -23,6 +24,7 @@ const NavBar = () => {
         const handleClickOutside = (event) => {
             if (menuRef.current && isMenuOpen && !menuRef.current.contains(event.target)) {
                 closeMenu();
+                console.log("Clicked outside, menu closed"); // Dış tıklama algılandı mı
             }
         };
 
@@ -33,8 +35,8 @@ const NavBar = () => {
     }, [isMenuOpen]);
 
     return (
-        <div className="w-full h-[4rem] bg-white border-b border-gray-200 py-4 z-50">
-            <div className="w-full flex justify-between items-center px-16 max-sm:px-5">
+        <nav className="bg-white border-b border-gray-200 py-4">
+            <div className="flex justify-between items-center px-16 max-sm:px-5">
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="text-xl font-bold text-gray-800 flex items-center space-x-2">
                     <Link href="/" className="flex items-center gap-2">
                         <LuSquirrel className="text-indigo-600" size={30} />
@@ -67,17 +69,17 @@ const NavBar = () => {
             {/* Mobil Menü İçeriği */}
             {isMenuOpen && (
                 <div ref={menuRef} className="md:hidden transition-all duration-300 bg-white border-t border-gray-200 mt-2 px-14 max-sm:px-2 pt-4">
-                    <Link href="/" className="flex py-2 items-center px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
+                    <Link href="/" onClick={closeMenu} className="flex py-2 items-center px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
                         <MdOutlineRssFeed size={18} className="mr-3" />
                         Akış
                     </Link>
-                    <Link href="/developer" className="flex items-center py-2 px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
+                    <Link href="/developer" onClick={closeMenu} className="flex items-center py-2 px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
                         <FaUser size={14} className="mr-4" />
                         Geliştirici
                     </Link>
                 </div>
             )}
-        </div>
+        </nav>
     );
 };
 

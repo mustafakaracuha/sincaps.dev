@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.png" type="image/png" />
             </head>
             <body className="w-full h-screen">
+            <NavBar />
                 <Providers store={store}>
-                <NavBar />
                     <div className="w-full h-screen flex items-center">
                         {/* Side Bar */}
                         <SidebarMenu />
