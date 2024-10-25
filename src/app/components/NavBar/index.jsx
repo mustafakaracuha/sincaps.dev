@@ -33,8 +33,8 @@ const NavBar = () => {
     }, [isMenuOpen]);
 
     return (
-        <div className="w-full h-[4rem] bg-white border-b border-gray-200 py-4">
-            <div className="flex justify-between items-center px-16 max-sm:px-5">
+        <div className="w-full h-[4rem] bg-white border-b border-gray-200 py-4 z-50">
+            <div className="w-full flex justify-between items-center px-16 max-sm:px-5">
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 0.1 }} className="text-xl font-bold text-gray-800 flex items-center space-x-2">
                     <Link href="/" className="flex items-center gap-2">
                         <LuSquirrel className="text-indigo-600" size={30} />
