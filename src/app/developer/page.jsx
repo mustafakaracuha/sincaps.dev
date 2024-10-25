@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiReact, SiTailwindcss, SiNextdotjs, SiJavascript } from "react-icons/si";
+import { PiInstagramLogoFill } from "react-icons/pi";
 
 import developer from "../../assets/images/developer.jpg";
 
@@ -75,11 +76,14 @@ function Developer() {
 
                     {/* Sosyal Linkler */}
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.7 }} className="flex justify-center space-x-4 mb-4 mt-4">
-                        <a href="https://github.com/mustafakaracuha" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="text-gray-600 hover:text-black text-xl" />
+                        <a href="https://github.com/mustafakaracuha"  target="_blank" rel="noopener noreferrer">
+                            <FaGithub className="text-gray-600 hover:text-black text-xl" /> 
                         </a>
-                        <a href="https://www.linkedin.com/in/mustafakaracuha" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedinIn className="text-gray-600 hover:text-blue-600 text-xl" />
+                        <a href="https://www.linkedin.com/in/mustafakaracuha"  target="_blank" rel="noopener noreferrer">
+                            <FaLinkedinIn className="text-blue-600 hover:text-blue-600 text-xl" /> 
+                        </a>
+                        <a href="https://instagram.com/muskaracuha" target="_blank"  rel="noopener noreferrer">
+                            <PiInstagramLogoFill className="text-red-600 hover:text-red-500 text-xl" 
                         </a>
                     </motion.div>
 
