@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="icon" href="/favicon.png" type="image/png" />
             </head>
-            <body className="overflow-hidden">
+            <body className="w-full h-screen overflow-hidden">
                 <Providers store={store}>
                     <NavBar />
                     <div className="w-full h-screen flex items-center">
