@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { SiReact, SiTailwindcss, SiNextdotjs, SiJavascript } from "react-icons/si";
-import { PiInstagramLogoFill } from "react-icons/pi";
+import { FaInstagram } from "react-icons/fa";
 
 import developer from "../../assets/images/developer.jpg";
 
@@ -49,31 +49,6 @@ function Developer() {
                         optimizasyonu, responsive tasarım ve kullanıcı deneyimi üzerine çalışıyorum.
                     </motion.p>
 
-                    {/* Teknolojiler */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.5 }}
-                        className="flex justify-center max-sm:text-sm space-x-4 mb-4 mt-6"
-                    >
-                        <div className="flex items-center space-x-2">
-                            <SiReact className="text-blue-500 text-xl" />
-                            <span className="text-gray-600">React.js</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <SiTailwindcss className="text-blue-400 text-xl" />
-                            <span className="text-gray-600">Tailwind CSS</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <SiNextdotjs className="text-black text-xl" />
-                            <span className="text-gray-600">Next.js</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <SiJavascript className="text-yellow-500 text-xl" />
-                            <span className="text-gray-600">JavaScript</span>
-                        </div>
-                    </motion.div>
-
                     {/* Sosyal Linkler */}
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.7 }} className="flex justify-center space-x-4 mb-4 mt-4">
                         <a href="https://github.com/mustafakaracuha"  target="_blank" rel="noopener noreferrer">
@@ -83,7 +58,7 @@ function Developer() {
                             <FaLinkedinIn className="text-blue-600 hover:text-blue-600 text-xl" /> 
                         </a>
                         <a href="https://instagram.com/muskaracuha" target="_blank"  rel="noopener noreferrer">
-                            <PiInstagramLogoFill className="text-red-600 hover:text-red-500 text-xl" 
+                            <FaInstagram className="text-red-500 hover:text-red-500 text-xl" />
                         </a>
                     </motion.div>
 
