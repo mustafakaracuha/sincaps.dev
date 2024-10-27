@@ -17,7 +17,7 @@ const GoogleAdsense = ({ pId }) => {
     }, []);
 
     return (
-        <>
+        <div className="w-full h-full">
             <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${pId}`} crossOrigin="anonymous" />
             <ins
                 class="adsbygoogle"
@@ -28,7 +28,7 @@ const GoogleAdsense = ({ pId }) => {
                 data-ad-client={`ca-pub-${pId}`}
                 data-ad-slot="2954304772"
             ></ins>
-        </>
+        </div>
     );
 };
 
