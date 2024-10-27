@@ -10,6 +10,7 @@ import { GiSoccerKick } from "react-icons/gi";
 import { LuSquirrel } from "react-icons/lu";
 
 import { fetchNews } from "../../../store/features/feed/feedSlice";
+import GoogleAdsenseFeed from "../../../../GoogleAdsenseFeed";
 
 const FeedPage = ({ params }) => {
     const { feedName } = params;
@@ -97,6 +98,7 @@ const FeedPage = ({ params }) => {
                             </div>
                         </motion.a>
                     ))}
+                <GoogleAdsenseFeed pId={process.env.NEXT_GOOGLE_ID} />
             </div>
         </div>
     );

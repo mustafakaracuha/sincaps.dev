@@ -19,7 +19,7 @@ const GoogleAdsense = ({ pId }) => {
     return (
         <>
             <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${pId}`} crossOrigin="anonymous" />
-            <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client={`ca-pub-${pId}`} data-ad-slot="4618740231" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style={{ display: "block" }} data-ad-format="fluid" data-ad-layout-key="-7h+ez-1k-3m+ck" data-ad-client={`ca-pub-${pId}`} data-ad-slot="2954304772"></ins>
         </>
     );
 };
