@@ -98,8 +98,8 @@ const FeedPage = ({ params }) => {
                             </div>
                         </motion.a>
                     ))}
-                <GoogleAdsenseFeed pId={process.env.NEXT_GOOGLE_ID} />
             </div>
+            <GoogleAdsenseFeed pId={process.env.NEXT_GOOGLE_ID} />
         </div>
     );
 };
