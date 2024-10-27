@@ -84,7 +84,7 @@ function PharmaciesOncallPage() {
                     </select>
                 </div>
             </motion.div>
-
+            <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
             <ul className="space-y-6">
                 {pharmaciesOncallList?.pharmacies?.length > 0
                     ? pharmaciesOncallList.pharmacies.map((pharmacy, index) => (
@@ -124,7 +124,7 @@ function PharmaciesOncallPage() {
                           </li>
                       )}
             </ul>
-            <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID}/>
+            <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
         </div>
     );
 }
