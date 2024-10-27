@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaFilm, FaBook, FaCarCrash,FaTree, FaSpa, FaPaw } from "react-icons/fa";
+import { FaNewspaper, FaLaptopCode, FaChartLine, FaHeartbeat, FaFutbol, FaFilm, FaBook, FaCarCrash, FaTree, FaSpa, FaPaw } from "react-icons/fa";
 import { PiTrafficSignFill } from "react-icons/pi";
 import { RiEarthquakeFill } from "react-icons/ri";
 import { WiEarthquake } from "react-icons/wi";
@@ -33,7 +33,20 @@ function Page() {
         { link: "trafikcezasi", title: "Trafik Cezaları", description: "2024 yılı trafik cezaları", icon: <FaCarCrash className="text-red-500" />, path: "/traffic-fine" },
         { link: "trafikkurallari", title: "Trafik Kuralları", description: "Trafik kuralları", icon: <PiTrafficSignFill className="text-gray-400" />, path: "/traffic-rules" },
         { link: "cevreyikorumak", title: "Çevreyi Korumak", description: "Çevreyi korumak hakkında", icon: <FaTree className="text-lime-600" />, path: "/protecting-environment" },
-        { link: "hayvanlarikorumak", title: "Minik Dostlarımız", description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin", icon: <FaPaw className="text-teal-500" />, path: "/protecting-animals" },
+        {
+            link: "hayvanlarikorumak",
+            title: "Minik Dostlarımız",
+            description: "Hayvanları koruma yolları ve yapılabilecekler hakkında bilgi edinin",
+            icon: <FaPaw className="text-teal-500" />,
+            path: "/protecting-animals",
+        },
+        {
+            link: "saglikliyasam",
+            title: "Sağlıklı Yaşam",
+            description: "Sağlıklı bir yaşam sürmek için beslenme, egzersiz ve zihinsel sağlık üzerine ipuçları.",
+            icon: <FaHeartbeat className="text-green-400" />,
+            path: "/healty-life",
+        },
         { link: "kisiselbakim", title: "Kişisel Bakım", description: "Sağlıklı ve bakımlı görünmek için öneriler ve ipuçları", icon: <FaSpa className="text-pink-400" />, path: "/personal-care" },
     ];
 
@@ -53,9 +66,8 @@ function Page() {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="max-sm:text-sm md:text-sm lg:text-md xl:text-[14px] border-l-4 border-yellow-500 bg-yellow-50 p-4 font-normal text-gray-400 mb-8 mt-3"
             >
-                Doğru ve güvenilir kaynaklar sunarak toplumu bilgilendirir, güncel haberler ve analizlerle kullanıcıların gelişen olaylara dair
-                farkındalığını artırır. Eğitim, sağlık, çevre gibi toplumu ilgilendiren önemli konularda da içerikler sunarak, kullanıcılarının sosyal sorumluluklarını destekler ve bilinçli bireyler
-                yetişmesine katkıda bulunur.
+                Doğru ve güvenilir kaynaklar sunarak toplumu bilgilendirir, güncel haberler ve analizlerle kullanıcıların gelişen olaylara dair farkındalığını artırır. Eğitim, sağlık, çevre gibi
+                toplumu ilgilendiren önemli konularda da içerikler sunarak, kullanıcılarının sosyal sorumluluklarını destekler ve bilinçli bireyler yetişmesine katkıda bulunur.
             </motion.p>
 
             <motion.h2

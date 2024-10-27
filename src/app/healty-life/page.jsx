@@ -1,0 +1,81 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { FaAppleAlt, FaRunning, FaBrain, FaBed, FaTint } from "react-icons/fa";
+
+function Page() {
+    const healthyLivingTopics = [
+        {
+            title: "Beslenme ve Diyet",
+            description: "Dengeli ve sağlıklı beslenme, vücut sağlığımızı korumak için gereklidir. Günlük vitamin ve mineral alımını sağlamak, enerji seviyemizi ve genel sağlığımızı olumlu etkiler.",
+            icon: <FaAppleAlt className="text-green-500 text-lg" />,
+            diet: [
+                "Kahvaltı: Yulaf ezmesi, yumurta, yeşillik",
+                "Ara Öğün: Bir avuç ceviz veya badem.",
+                "Öğle: Izgara tavuk, kinoa ve sebze salatası, pilav",
+                "Ara Öğün: Yeşil elma",
+                "Akşam: Fırında somon, bulgur, kinoa ve buharda pişirilmiş brokoli",
+            ],
+        },
+        {
+            title: "Egzersiz ve Fiziksel Aktivite",
+            description: "Düzenli egzersiz, hem fiziksel hem de zihinsel sağlığımızı güçlendirir. Haftada en az 150 dakika orta şiddette fiziksel aktivite, kalp sağlığımızı korumamıza yardımcı olur.",
+            icon: <FaRunning className="text-blue-500 text-lg" />,
+        },
+        {
+            title: "Mental Sağlık ve Stres Yönetimi",
+            description: "Ruhsal sağlığımızı korumak, günlük stresle başa çıkmak için önemlidir. Meditasyon ve hobiler, stresin azalmasına katkıda bulunur.",
+            icon: <FaBrain className="text-purple-500 text-lg" />,
+        },
+        {
+            title: "Uyku Düzeni",
+            description: "Düzenli ve kaliteli uyku, vücudumuzun yenilenmesi için gereklidir. Günde 7-9 saat uyumak, bağışıklık sistemimizi güçlü tutar ve enerji seviyemizi artırır.",
+            icon: <FaBed className="text-gray-500 text-lg" />,
+        },
+        {
+            title: "Hidrasyon",
+            description: "Gün boyunca yeterli su tüketmek, vücut fonksiyonlarımızı düzenler ve genel sağlığımızı destekler.",
+            icon: <FaTint className="text-teal-500 text-lg" />,
+        },
+    ];
+
+    return (
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full overflow-auto pb-24 px-10 max-sm:px-5 py-8">
+            <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-600 text-start mb-4">Sağlıklı Yaşam</h1>
+            <p className="text-gray-500 text-[15px] max-sm:text-[14px] flex items-center gap-2">
+                Sağlıklı bir yaşam tarzı sürdürmek için doğru alışkanlıklar geliştirmek önemlidir. Beslenme, uyku, egzersiz ve mental sağlığa özen göstererek hayat kalitemizi artırabiliriz.
+            </p>
+
+            <ul className="space-y-3 mt-6 mb-6">
+                {healthyLivingTopics.map((topic, index) => (
+                    <motion.li
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                        key={index}
+                        className="p-4 border-b border-gray-100 flex items-center gap-4"
+                    >
+                        <div>{topic.icon}</div>
+                        <div>
+                            <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-1">{topic.title}</h2>
+                            <p className="text-gray-500 text-[14px] max-sm:text-[13px] mb-1">{topic.description}</p>
+                            {topic.diet && (
+                                <>
+                                    <p className="text-[15px] text-gray-500">Örnek bir beslenme planı; </p>
+                                    <ul className="list-disc pl-5 mt-2 text-gray-600 text-sm">
+                                        {topic.diet.map((item, dietIndex) => (
+                                            <li key={dietIndex}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )}
+                        </div>
+                    </motion.li>
+                ))}
+            </ul>
+        </motion.div>
+    );
+}
+
+export default Page;
