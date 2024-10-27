@@ -10,7 +10,6 @@ import { GiSoccerKick } from "react-icons/gi";
 import { LuSquirrel } from "react-icons/lu";
 
 import { fetchNews } from "../../../store/features/feed/feedSlice";
-import GoogleAdsenseFeed from "../../../../GoogleAdsenseFeed";
 
 const FeedPage = ({ params }) => {
     const { feedName } = params;
@@ -73,7 +72,6 @@ const FeedPage = ({ params }) => {
                     )}
                 </>
             )}
-            <GoogleAdsenseFeed pId={process.env.NEXT_GOOGLE_ID} />
             <div className="w-full grid max-sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10">
                 {newsArticles.length > 0 &&
                     newsArticles.map((article, index) => (
@@ -99,7 +97,6 @@ const FeedPage = ({ params }) => {
                         </motion.a>
                     ))}
             </div>
-            <GoogleAdsenseFeed pId={process.env.NEXT_GOOGLE_ID} />
         </div>
     );
 };
