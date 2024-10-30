@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { motion } from "framer-motion";
 import { LuSquirrel } from "react-icons/lu";
 import { MdOutlineRssFeed } from "react-icons/md";
@@ -10,10 +12,13 @@ import { FaUser } from "react-icons/fa";
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
+    const pathName = usePathname();
+
+    console.log(pathName);
 
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
-        console.log("Menu toggle: ", !isMenuOpen); // Açılma ve kapanma kontrolü için
+        console.log("Menu toggle: ", !isMenuOpen);
     };
 
     const closeMenu = () => {
@@ -24,7 +29,7 @@ const NavBar = () => {
         const handleClickOutside = (event) => {
             if (menuRef.current && isMenuOpen && !menuRef.current.contains(event.target)) {
                 closeMenu();
-                console.log("Clicked outside, menu closed"); // Dış tıklama algılandı mı
+                console.log("Clicked outside, menu closed");
             }
         };
 
@@ -47,11 +52,26 @@ const NavBar = () => {
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }} className="hidden md:flex space-x-6">
-                    <Link href="/" className="text-gray-600 flex text-[13px] items-center hover:text-indigo-500 transition duration-300">
+                    <Link
+                        href="/"
+                        className={`${
+                            pathName === "/"
+                                ? "flex text-[13px] bg-indigo-500 px-3 py-1.5 rounded-md text-white items-center transition duration-300"
+                                : "text-gray-600 flex text-[13px] px-3 py-1.5 rounded-md items-center hover:text-indigo-500 transition duration-300 "
+                        }`}
+                    >
+                        {" "}
                         <MdOutlineRssFeed size={18} className="mr-1" />
                         Akış
                     </Link>
-                    <Link href="/developer" className="text-gray-600 flex text-[13px] items-center hover:text-indigo-500 transition duration-300">
+                    <Link
+                        href="/developer"
+                        className={`${
+                            pathName === "/developer"
+                                ? "flex text-[13px] bg-indigo-500 px-3 py-1.5 rounded-md text-white items-center transition duration-300"
+                                : "text-gray-600 flex text-[13px] items-center px-3 py-1.5 rounded-md hover:text-indigo-500 transition duration-300 "
+                        }`}
+                    >
                         <FaUser size={13} className="mr-1" />
                         Geliştirici
                     </Link>
