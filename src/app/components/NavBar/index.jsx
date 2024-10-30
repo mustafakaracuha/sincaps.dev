@@ -89,11 +89,11 @@ const NavBar = () => {
             {/* Mobil Menü İçeriği */}
             {isMenuOpen && (
                 <div ref={menuRef} className="md:hidden transition-all duration-300 bg-white border-t border-gray-200 mt-2 px-14 max-sm:px-2 pt-4">
-                    <Link href="/" onClick={closeMenu} className="flex py-2 items-center px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
+                    <Link href="/" onClick={closeMenu} className="flex py-2 text-sm items-center px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
                         <MdOutlineRssFeed size={18} className="mr-3" />
                         Akış
                     </Link>
-                    <Link href="/developer" onClick={closeMenu} className="flex items-center py-2 px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
+                    <Link href="/developer" onClick={closeMenu} className="flex items-center text-sm py-2 px-4 text-gray-500 hover:text-indigo-500 transition duration-300">
                         <FaUser size={14} className="mr-4" />
                         Geliştirici
                     </Link>
