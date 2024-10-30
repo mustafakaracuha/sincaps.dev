@@ -51,7 +51,7 @@ const NavBar = () => {
                     </Link>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }} className="hidden md:flex space-x-6">
+                <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }} className="hidden md:flex space-x-4">
                     <Link
                         href="/"
                         className={`${
