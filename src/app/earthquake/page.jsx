@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
 
 function Page() {
     const safetyTips = [
@@ -73,6 +74,7 @@ function Page() {
                             ))}
                         </ul>
                     </div>
+                    <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
                     {tip.additionalNotes &&
                         tip.additionalNotes.map((note, noteIndex) => (
                             <p key={noteIndex} className="mt-4 text-[15px]">
@@ -86,6 +88,7 @@ function Page() {
                             ))}
                         </ul>
                     )}
+                    <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
                 </div>
             ))}
         </motion.div>
