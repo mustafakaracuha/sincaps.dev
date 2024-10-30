@@ -32,7 +32,7 @@ function Page() {
         return (
             <div className="text-center text-red-500">
                 <p>Hata: {error}</p>
-                <button onClick={() => dispatch(fetchLastEarthquake(feedName))} className="text-blue-500 hover:underline">
+                <button onClick={() => dispatch(fetchLastEarthquake())} className="text-blue-500 hover:underline">
                     Tekrar Dene
                 </button>
             </div>
