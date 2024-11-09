@@ -8,6 +8,8 @@ import { FaBottleDroplet } from "react-icons/fa6";
 import { GiFruitBowl } from "react-icons/gi";
 import { MdHouse } from "react-icons/md";
 
+import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
+
 function Page() {
     const environmentProtectionTips = [
         {
@@ -75,19 +77,22 @@ function Page() {
             <h1 className="text-xl max-sm:text-[16px] flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">Çevreyi Korumak</h1>
             <ul className="space-y-3">
                 {environmentProtectionTips.map((tip, index) => (
-                    <motion.li
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1, duration: 0.3 }}
-                        className="p-4 border-b border-gray-100 flex items-center gap-4"
-                    >
-                        <div className="text-xl">{tip.icon}</div>
-                        <div>
-                            <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-2">{tip.title}</h2>
-                            <p className="text-[14px] max-sm:text-[13px] text-gray-500">{tip.description}</p>
-                        </div>
-                    </motion.li>
+                    <>
+                        <motion.li
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1, duration: 0.3 }}
+                            className="p-4 border-b border-gray-100 flex items-center gap-4"
+                        >
+                            <div className="text-xl">{tip.icon}</div>
+                            <div>
+                                <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-2">{tip.title}</h2>
+                                <p className="text-[14px] max-sm:text-[13px] text-gray-500">{tip.description}</p>
+                            </div>
+                        </motion.li>
+                        <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
+                    </>
                 ))}
             </ul>
         </motion.div>

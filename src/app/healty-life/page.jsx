@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaAppleAlt, FaRunning, FaBrain, FaBed, FaTint } from "react-icons/fa";
+import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
 
 function Page() {
     const healthyLivingTopics = [
@@ -77,6 +78,7 @@ function Page() {
 
             <ul className="space-y-3 mt-6 mb-6">
                 {healthyLivingTopics.map((topic, index) => (
+                <>
                     <motion.li
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -110,6 +112,8 @@ function Page() {
                             )}
                         </div>
                     </motion.li>
+                     <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
+                     </>
                 ))}
             </ul>
         </motion.div>

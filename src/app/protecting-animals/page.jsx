@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPaw, FaTree, FaHeart, FaHands, FaDog, FaCat, FaDove, FaHandsHelping, FaLeaf } from "react-icons/fa";
-import { BiSolidDonateHeart } from "react-icons/bi";
+import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
 
 function AnimalProtectionPage() {
     const animalProtectionTopics = [
@@ -101,22 +101,26 @@ function AnimalProtectionPage() {
                         </div>
                     </a>
                 ))}
+                <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
             </div>
             <ul className="space-y-3">
                 {animalProtectionTopics.map((topic, index) => (
-                    <motion.li
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1, duration: 0.3 }}
-                        key={index}
-                        className="p-4 border-b border-gray-100 flex items-center gap-4"
-                    >
-                        <div>{topic.icon}</div>
-                        <div>
-                            <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-1">{topic.title}</h2>
-                            <p className="text-gray-500 text-[14px] max-sm:text-[13px] mb-1">{topic.description}</p>
-                        </div>
-                    </motion.li>
+                    <>
+                        <motion.li
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1, duration: 0.3 }}
+                            key={index}
+                            className="p-4 border-b border-gray-100 flex items-center gap-4"
+                        >
+                            <div>{topic.icon}</div>
+                            <div>
+                                <h2 className="text-md max-sm:text-[14px] font-semibold text-gray-700 mb-1">{topic.title}</h2>
+                                <p className="text-gray-500 text-[14px] max-sm:text-[13px] mb-1">{topic.description}</p>
+                            </div>
+                        </motion.li>
+                        <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
+                    </>
                 ))}
             </ul>
         </motion.div>

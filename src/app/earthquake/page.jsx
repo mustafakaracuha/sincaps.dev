@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
 
 function Page() {
     const safetyTips = [
@@ -64,29 +65,32 @@ function Page() {
     return (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }} className="w-full h-full py-8 px-10 pb-20 bg-white overflow-auto">
             {safetyTips.map((tip, index) => (
-                <div key={index}>
-                    <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">{tip.title}</h1>
-                    <div className="space-y-4 mb-6">
-                        <ul className="space-y-3 text-gray-500 text-[15px] list-disc">
-                            {tip.items.map((item, itemIndex) => (
-                                <li key={itemIndex}>{typeof item === "string" ? item : <span className="font-semibold text-gray-700">{item.description}</span>}</li>
+                <>
+                    <div key={index}>
+                        <h1 className="text-xl flex items-center justify-between gap-4 font-semibold text-gray-700 text-start mb-4">{tip.title}</h1>
+                        <div className="space-y-4 mb-6">
+                            <ul className="space-y-3 text-gray-500 text-[15px] list-disc">
+                                {tip.items.map((item, itemIndex) => (
+                                    <li key={itemIndex}>{typeof item === "string" ? item : <span className="font-semibold text-gray-700">{item.description}</span>}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        {tip.additionalNotes &&
+                            tip.additionalNotes.map((note, noteIndex) => (
+                                <p key={noteIndex} className="mt-4 text-[15px]">
+                                    {note}
+                                </p>
                             ))}
-                        </ul>
+                        {tip.warnings && (
+                            <ul className="space-y-3 mt-10 text-[15px] text-gray-500 list-disc mb-6">
+                                {tip.warnings.map((warning, warningIndex) => (
+                                    <li key={warningIndex}>{warning}</li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
-                    {tip.additionalNotes &&
-                        tip.additionalNotes.map((note, noteIndex) => (
-                            <p key={noteIndex} className="mt-4 text-[15px]">
-                                {note}
-                            </p>
-                        ))}
-                    {tip.warnings && (
-                        <ul className="space-y-3 mt-10 text-[15px] text-gray-500 list-disc mb-6">
-                            {tip.warnings.map((warning, warningIndex) => (
-                                <li key={warningIndex}>{warning}</li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                    <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
+                </>
             ))}
         </motion.div>
     );
