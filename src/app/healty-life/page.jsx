@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaAppleAlt, FaRunning, FaBrain, FaBed, FaTint } from "react-icons/fa";
-import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
 
 function Page() {
     const healthyLivingTopics = [
@@ -112,7 +111,6 @@ function Page() {
                             )}
                         </div>
                     </motion.li>
-                     <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
                      </>
                 ))}
             </ul>
