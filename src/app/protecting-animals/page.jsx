@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPaw, FaTree, FaHeart, FaHands, FaDog, FaCat, FaDove, FaHandsHelping, FaLeaf } from "react-icons/fa";
-import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
 
 function AnimalProtectionPage() {
     const animalProtectionTopics = [
@@ -101,7 +100,6 @@ function AnimalProtectionPage() {
                         </div>
                     </a>
                 ))}
-                <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
             </div>
             <ul className="space-y-3">
                 {animalProtectionTopics.map((topic, index) => (
@@ -119,7 +117,6 @@ function AnimalProtectionPage() {
                                 <p className="text-gray-500 text-[14px] max-sm:text-[13px] mb-1">{topic.description}</p>
                             </div>
                         </motion.li>
-                        <GoogleAdsenseWrite pId={process.env.NEXT_GOOGLE_ID} />
                     </>
                 ))}
             </ul>

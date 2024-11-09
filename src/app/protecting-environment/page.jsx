@@ -8,8 +8,6 @@ import { FaBottleDroplet } from "react-icons/fa6";
 import { GiFruitBowl } from "react-icons/gi";
 import { MdHouse } from "react-icons/md";
 
-import GoogleAdsenseWrite from "../../../GoogleAdsenseWrite";
-
 function Page() {
     const environmentProtectionTips = [
         {
